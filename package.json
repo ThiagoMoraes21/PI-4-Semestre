@@ -1,0 +1,28 @@
+{
+  "name": "pi-4-semestre",
+  "version": "1.0.0",
+  "description": "Projeto Integrado 4º Semestre",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoMoraes21/PI-4-Semestre.git"
+  },
+  "author": "Thiago",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoMoraes21/PI-4-Semestre/issues"
+  },
+  "homepage": "https://github.com/ThiagoMoraes21/PI-4-Semestre#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
