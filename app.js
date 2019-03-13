@@ -1,11 +1,26 @@
 const express = require('express'),
       app     = express(),
       port    = process.env.PORT || 3000,
-      bodyParser = require('body-parser');
+      bodyParser = require('body-parser'),
+      mongoose = require('mongoose'),
+      url = process.env.DATABASEURL || 'mongodb://localhost/black_bird',
+      seedDB = require('./seeds');
 
 
 // requesting routes
 const indexRoutes = require('./routes/index');
+
+// setup database
+mongoose.connect(url, {useNewUrlParser: true});
+console.log(process.env.DATABASEURL);
+
+// testing db connection
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+    console.log('DB connected!');
+    seedDB();
+});
 
 //  setup
 app.use(bodyParser.urlencoded({ extended: true }));

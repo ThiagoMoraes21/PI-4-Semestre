@@ -1,9 +1,18 @@
 const express = require('express'),
-      router  = express.Router();
+      router  = express.Router(),
+      Post    = require('../models/post');
+      
 
 // root route
 router.get('/', (req, res) => {
-    res.render('promo/index');
+    Post.find({}, (err, allPosts) => {
+      if(err) {
+        console.log('Error trying to find posts');
+        console.log(err); 
+      } else {
+        res.render('promo/index', {posts: allPosts});
+      }
+    });
 });
 
 // new - show form to create a new post
