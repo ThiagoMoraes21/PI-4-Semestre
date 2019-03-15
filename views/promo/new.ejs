@@ -1,3 +1,30 @@
 <% include ../partials/header %>
-  <h1>Create page</h1>
+  <div class="container">
+      <form action="/" method="post">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nome do Produto</label>
+          <input type="text" name="name" class="form-control" placeholder="Nome do produto">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Preço</label>
+          <input type="text" name="price" class="form-control" placeholder="Preço">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Link da Imagem</label>
+          <input type="text" name="image" class="form-control" placeholder="Link da Imagem">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Link do site</label>
+          <input type="text" name="site" class="form-control" placeholder="Link do site">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Descrição</label>
+          <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Postar Oferta</button>
+        </div>
+  </form>
+ </div>
 <% include ../partials/footer %>

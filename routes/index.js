@@ -15,10 +15,46 @@ router.get('/', (req, res) => {
     });
 });
 
+// CREATE POST
+
 // new - show form to create a new post
 router.get('/new', (req, res) => {
   res.render('promo/new');
 });
+
+// post - handle the post request on the client-side and create a new post 
+router.post('/', (req, res) => {
+  // get the data from the form
+  const name = req.body.name,
+        price = req.body.price,
+        image = req.body.image,
+        site = req.body.site,
+        description = req.body.desc;
+
+  // creating a obj to store the from data
+  const newPost = {
+    name: name,
+    price: price,
+    image: image,
+    site: site,
+    description: description
+  }
+
+  // creatinh a new Post in the DB
+  Post.create(newPost, (err, createdPost) => {
+    if(err) {
+      console.log('Error trying to create the post');
+      console.log(err);
+      res.render('/promo/new');
+    } else {
+      // redirect to the new product page
+      res.redirect(`/${createdPost._id}`);
+    }
+  });
+
+});
+
+
 
 // show - promotion page information
 router.get('/:id', (req, res) => {
