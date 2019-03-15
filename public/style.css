@@ -18,10 +18,21 @@ img {
     padding-left: 8px;
 }
 
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  cursor: pointer;
+}
+
 .card {
-    border-radius: .50rem;
-    box-shadow: 0px 8px 25px rgba(63, 81, 181, 0.4);
-    width: 19rem;
+  border-radius: .50rem;
+  box-shadow: 0px 8px 25px rgba(63, 81, 181, 0.4);
+  width: 19rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 15px rgba(63, 81, 181, 0.2);
 }
 
 .card-img-top {
@@ -30,17 +41,17 @@ img {
 }
 
 .price {
-    top: 1rem;
+    top: .5rem;
     left: 0.5rem;
-    width: 5rem;
+    min-width: 5rem;
     height: 2rem;
     margin: 0;
-    padding: 0;
+    padding: 0 5px 0 5px;
     display: inline;
     color: #fff;
     text-align: center;
     line-height: 2rem;
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: var(--purple);
 }
 

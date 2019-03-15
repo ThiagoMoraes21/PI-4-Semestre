@@ -6,7 +6,8 @@ const postSchema = new mongoose.Schema({
     description: String,
     price: String,
     votes: Number,
-    image: String
+    image: String,
+    link: String
 });
 
 // create a model using postSchema

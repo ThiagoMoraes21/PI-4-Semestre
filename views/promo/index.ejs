@@ -8,18 +8,20 @@
   <body>
     <div class="container">
       <% posts.forEach((post) => { %>
+        <a href="/promocao/<%= post._id %>" class="custom-card">
           <div class="card">
-          <div>
-            <p class="price">R$<%= post.price %></p>
-            <img src="<%= post.image %>" class="card-img-top" alt="...">
-            <p class="votes"><%= post.votes %></p>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= post.name %></h5>
-            <p class="card-text"><%= post.description %></p>
-            <a href="/promocao/<%= post._id %>" class="btn btn-primary">Ir à Loja</a>
-          </div>
+            <div>
+              <p class="price">R$<%= post.price %></p>
+              <img src="<%= post.image %>" class="card-img-top" alt="...">
+              <p class="votes"><%= post.votes %></p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= post.name %></h5>
+              <p class="card-text"><%= post.description %></p>
+              <a href="<%= post.link %>" class="btn btn-primary">Ir à Loja</a>
+            </div>
         </div>
+        </a>
       <% }); %>
     </div>
   </body>
