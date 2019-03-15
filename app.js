@@ -29,6 +29,7 @@ app.set('view engine', 'ejs');
 
 // declaring routes
 app.use('/', indexRoutes);
+app.use('/promocao', indexRoutes);
 
 // Page not found
 app.get('*', (req, res) => {

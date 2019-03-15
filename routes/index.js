@@ -22,7 +22,16 @@ router.get('/new', (req, res) => {
 
 // show - promotion page information
 router.get('/:id', (req, res) => {
-  res.render('promo/show');
+  // find post with the provided Id
+  Post.findById(req.params.id, (err, postFound) => {
+    if(err) {
+      console.log('Error trying to find the post');
+      console.log(err);
+    } else {
+      // render show template 
+      res.render('promo/show', {post: postFound});
+    }
+  });
 });
 
 

@@ -1,3 +1,10 @@
 <% include ../partials/header %>
   <h1>SHOW PAGE</h1>
+  <div class="container">
+    <img src="<%= post.image %>" alt="<%= post.name %>">
+    <p><%= post.price %></p>
+    <p><%= post.votes %></p>
+    <p><%= post.name %></p>
+    <p><%= post.description %></p>
+  </div>
 <% include ../partials/footer %>

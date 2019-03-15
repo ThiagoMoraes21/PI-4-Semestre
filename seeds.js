@@ -6,7 +6,7 @@ const data = [
         description: `Some quick example text to build on the card title and make up the bulk of the card's content.`,
         price: '2000',
         votes: 53,
-        image: './img/img-1.jpg'
+        image: 'https://source.unsplash.com/A6JxK37IlPo'
     }
 ];
 
