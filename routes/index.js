@@ -24,20 +24,13 @@ router.get('/new', (req, res) => {
 
 // post - handle the post request on the client-side and create a new post 
 router.post('/', (req, res) => {
-  // get the data from the form
-  const name = req.body.name,
-        price = req.body.price,
-        image = req.body.image,
-        site = req.body.site,
-        description = req.body.desc;
-
-  // creating a obj to store the from data
+  // get the data from the form and stored it in a object
   const newPost = {
-    name: name,
-    price: price,
-    image: image,
-    site: site,
-    description: description
+    name: req.body.name,
+    price: req.body.price,
+    image: req.body.image,
+    site: req.body.site,
+    description: req.body.desc
   }
 
   // creatinh a new Post in the DB
