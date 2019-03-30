@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 /*****************
  *  CREATE ROUTE 
-/******************/
+/*****************/
 // new - show form to create a new post
 router.get('/new', (req, res) => {
   res.render('promo/new');
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 /*****************
  *  READ ROUTE
-/******************/
+/*****************/
 // show - promotion page information
 router.get('/:id', (req, res) => {
   // find post with the provided Id
@@ -69,7 +69,7 @@ router.get('/:id', (req, res) => {
 
 /*****************
  *  UPDATE ROUTE
-/******************/
+/*****************/
 
 // edit page
 router.get('/:id/edit', (req, res) => {
@@ -83,7 +83,7 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
-// update request
+// update router
 router.put('/:id', (req, res) => {
   Post.findOneAndUpdate(req.params.id, req.body.post, (err, foundPost) => {
     if(!err) {
@@ -94,6 +94,23 @@ router.put('/:id', (req, res) => {
     }
   });
 });
+
+/*****************
+ *  DELETE ROUTE
+/*****************/
+
+// destroy router, delete a specific post
+router.delete('/:id', (req, res) => {
+  Post.findOneAndDelete(req.params.id, (err) => {
+    if(!err) {
+      console.log('Post was deleted...');
+      res.redirect('/');
+    } else {
+      console.log(err);
+    }
+  });
+});
+
 
 
 module.exports = router;
