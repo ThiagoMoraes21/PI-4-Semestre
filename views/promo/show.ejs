@@ -2,14 +2,17 @@
   <h1>SHOW PAGE</h1>
   <div class="container">
     <img src="<%= post.image %>" alt="<%= post.name %>">
+    <a href="<%= post.site %>" class="btn btn-primary">Ir à Loja</a>
+    <a href="/promocao/<%= post._id %>/edit" class="btn btn-success">Editar</a>
     <p><%= post.price %></p>
     <p><%= post.votes %></p>
     <p><%= post.name %></p>
     <p><%= post.description %></p>
   </div>
-      <div class="container">
-      <div class="comments-session">
-        <p>This is some random text that I wrote in the co-working room...</p>
-      </div>
+
+  <div class="container">
+    <div class="comments-session">
+      <p>This is some random text that I wrote in the co-working room...</p>
     </div>
+  </div>
 <% include ../partials/footer %>

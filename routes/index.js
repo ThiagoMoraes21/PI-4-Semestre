@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
     });
 });
 
-// CREATE POST
 
+/*****************
+ *  CREATE ROUTE 
+/******************/
 // new - show form to create a new post
 router.get('/new', (req, res) => {
   res.render('promo/new');
@@ -48,7 +50,9 @@ router.post('/', (req, res) => {
 });
 
 
-
+/*****************
+ *  READ ROUTE
+/******************/
 // show - promotion page information
 router.get('/:id', (req, res) => {
   // find post with the provided Id
@@ -59,6 +63,21 @@ router.get('/:id', (req, res) => {
     } else {
       // render show template 
       res.render('promo/show', {post: postFound});
+    }
+  });
+});
+
+/*****************
+ *  UPDATE ROUTE
+/******************/
+
+router.get('/:id/edit', (req, res) => {
+  // res.render('edit');
+  Post.findById(req.params.id, (err, foundPost) => {
+    if(!err) {
+      res.render('promo/edit', { post: foundPost });
+    } else {
+      console.log(err);
     }
   });
 });
