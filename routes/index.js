@@ -71,11 +71,24 @@ router.get('/:id', (req, res) => {
  *  UPDATE ROUTE
 /******************/
 
+// edit page
 router.get('/:id/edit', (req, res) => {
   // res.render('edit');
   Post.findById(req.params.id, (err, foundPost) => {
     if(!err) {
       res.render('promo/edit', { post: foundPost });
+    } else {
+      console.log(err);
+    }
+  });
+});
+
+// update request
+router.put('/:id', (req, res) => {
+  Post.findOneAndUpdate(req.params.id, req.body.post, (err, foundPost) => {
+    if(!err) {
+      // redirecio para a página do produto editado
+      res.redirect(`/${req.params.id}`);
     } else {
       console.log(err);
     }
