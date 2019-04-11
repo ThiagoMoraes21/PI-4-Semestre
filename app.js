@@ -9,7 +9,8 @@ const express = require('express'),
 
 
 // requesting routes
-const indexRoutes = require('./routes/index');
+const indexRoutes = require('./routes/posts');
+const commentsRoutes = require('./routes/comment`s');
 
 // setup database
 mongoose.connect(url, {useNewUrlParser: true});
@@ -33,6 +34,7 @@ app.set('view engine', 'ejs');
 // declaring routes
 app.use('/', indexRoutes);
 app.use('/promocao', indexRoutes);
+app.use('/promocao/:id/comments', commentsRoutes);
 
 // Page not found
 app.get('*', (req, res) => {

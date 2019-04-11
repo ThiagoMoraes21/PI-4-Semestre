@@ -7,7 +7,18 @@ const postSchema = new mongoose.Schema({
     price: String,
     votes: Number,
     image: String,
-    site: String
+    site: String,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        username: String
+    },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    }]
 });
 
 // create a model using postSchema
