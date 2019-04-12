@@ -10,7 +10,7 @@ const express = require('express'),
 
 // requesting routes
 const indexRoutes = require('./routes/posts');
-const commentsRoutes = require('./routes/comment`s');
+const commentsRoutes = require('./routes/comments');
 
 // setup database
 mongoose.connect(url, {useNewUrlParser: true});
@@ -30,11 +30,15 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
-
-// declaring routes
 app.use('/', indexRoutes);
 app.use('/promocao', indexRoutes);
-app.use('/promocao/:id/comments', commentsRoutes);
+// app.use('/promocao/:id/comments', indexRoutes);
+
+// declaring routes
+// app.route('/', indexRoutes);
+// app.route('/promocao', indexRoutes);
+// app.route('/promocao/:id/comments', commentsRoutes);
+
 
 // Page not found
 app.get('*', (req, res) => {

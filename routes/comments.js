@@ -1,9 +1,22 @@
-var express = require('express');
-var router = express.Router({ mergeParams: true });
-var Campground = require('../models/campground');
-var Comment = require('../models/comment');
+// const express = require('express');
+//       router = express.Router({ mergeParams: true }),
+//       Post = require('../models/post'),
+//       Comment = require('../models/comments');
 
-// new router
-router.get('/', (req, res) => {
-    
-});
+// // new router
+// router.get('/', (req, res) => {
+//     Post.findById(req.params.id, (err, post) => {
+//         if(!err) {
+//             res.render('comments/new', {post: post});
+//         } else {
+//             // deling with error
+//             throw err;
+//         }
+//     });
+// });
+
+// router.post('/', (req, res) => {
+//     Comment.create()
+// });
+
+// module.exports = router;

@@ -1,6 +1,7 @@
 const express = require('express'),
-      router  = express.Router(),
-      Post    = require('../models/post');
+      router = express.Router({ mergeParams: true }),
+      Post    = require('../models/post'),
+      Comment = require('../models/comments');
       
 
 // root route
@@ -110,6 +111,27 @@ router.delete('/:id', (req, res) => {
     }
   });
 });
+
+
+/*********************
+ *  COMMENTS ROUTERS
+/********************/
+
+// creating a new comment
+router.post('/', (req, res) => {
+  // install sanatizer later!
+  //req.body.todo.text = req.sanitize(req.body.todo.text);
+  var formData = req.body.post;
+  Todo.create(formData, function (err, newComment) {
+    if (err) {
+      res.render("new");
+      throw err;
+    } else {
+      res.json(newTodo);
+    }
+  });
+});
+
 
 
 

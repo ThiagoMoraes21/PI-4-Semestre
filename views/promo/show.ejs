@@ -14,8 +14,44 @@
   </div>
 
   <div class="container">
-    <div class="comments-session">
-      <p>This is some random text that I wrote in the co-working room...</p>
+    <div class="comments">
+          <h3>Comentários</h3>
+
+          <div class="comment-area">
+            <ul class="list-group">
+              <!-- comments area -->
+            </ul>
+          </div>
+
+          <!--
+        <form action="/promocao" method="post" id="new-comment-form">
+              <div class="form-group">
+                <input class="form-control" type="text" name="description" placeholder="description" required>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" type="button">Comentar</button>
+              </div>
+          </form>
+          -->
+
+          <!-- List of To-do itens -->
+			<h1>To Do Items</h1>
+			<ul class="list-group" id="todo-list">
+			<% todos.forEach(function(todo){ %>
+				<li class="list-group-item">
+					<span class="lead">
+						<%= todo.text %>
+					</span>
+					<div class="pull-right">
+						<a href="/todos/<%=todo._id%>/edit" class="btn btn-sm btn-warning">Edit</a>
+						<form style="display: inline" method="POST" action="/todos/<%=todo._id%>?_method=DELETE">
+							<button type="submit" class="btn btn-sm btn-danger">Delete</button>
+						</form>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+			<% }); %>
+			</ul>
     </div>
   </div>
 <% include ../partials/footer %>
