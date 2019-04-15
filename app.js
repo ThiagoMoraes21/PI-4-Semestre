@@ -21,7 +21,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
     console.log('DB connected!');
-    seedDB();
+    //seedDB();
 });
 
 //  setup
@@ -32,13 +32,6 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRoutes);
 app.use('/promocao', indexRoutes);
-// app.use('/promocao/:id/comments', indexRoutes);
-
-// declaring routes
-// app.route('/', indexRoutes);
-// app.route('/promocao', indexRoutes);
-// app.route('/promocao/:id/comments', commentsRoutes);
-
 
 // Page not found
 app.get('*', (req, res) => {

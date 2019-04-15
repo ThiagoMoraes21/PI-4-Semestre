@@ -52,12 +52,12 @@ router.post('/', (req, res) => {
 
 
 /*****************
- *  READ ROUTE
+ *  SHOW ROUTE
 /*****************/
 // show - promotion page information
 router.get('/:id', (req, res) => {
   // find post with the provided Id
-  Post.findById(req.params.id, (err, postFound) => {
+  Post.findById(req.params.id).populate('comments').exec((err, postFound) => {
     if(err) {
       console.log('Error trying to find the post');
       console.log(err);
@@ -117,22 +117,34 @@ router.delete('/:id', (req, res) => {
  *  COMMENTS ROUTERS
 /********************/
 
-// creating a new comment
-router.post('/', (req, res) => {
+//creating a new comment
+router.post('/:id/comments', (req, res) => {
   // install sanatizer later!
   //req.body.todo.text = req.sanitize(req.body.todo.text);
-  var formData = req.body.post;
-  Todo.create(formData, function (err, newComment) {
-    if (err) {
-      res.render("new");
-      throw err;
+
+  // find the post where the comment is gonna be created
+  Post.findById(req.params.id, (err, post) => {
+    if(!err) {
+      // create new comment 
+      Comment.create(req.body.comment, (err, comment) => {
+        if(!err) {
+          // sent the json containing the form input
+          res.json(comment);
+
+          // save comment in the post
+          post.comments.push(comment);
+          post.save();
+        } else {
+          console.log(err);
+          res.redirect('back');
+        }
+      });
+
     } else {
-      res.json(newTodo);
+      console.log(err);
+      res.redirect('back');
     }
   });
 });
-
-
-
 
 module.exports = router;
