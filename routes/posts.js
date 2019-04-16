@@ -119,28 +119,13 @@ router.delete('/:id', (req, res) => {
 
 //creating a new comment
 router.post('/:id/comments', (req, res) => {
-  // install sanatizer later!
-  //req.body.todo.text = req.sanitize(req.body.todo.text);
-
-  // find the post where the comment is gonna be created
-  Post.findById(req.params.id, (err, post) => {
+  // create new comment 
+  Comment.create(req.body.comment, (err, comment) => {
     if(!err) {
-      // create new comment 
-      Comment.create(req.body.comment, (err, comment) => {
-        if(!err) {
-          // save comment in the post
-          // comment.save();
-          // post.comments.push(comment);
-          // post.save();
+      // sent the json containing the form input
 
-          // sent the json containing the form input
-          res.json(comment);
-
-        } else {
-          console.log(err);
-          res.redirect('back');
-        }
-      });
+      // Post.comments.push(comment);
+      res.json(comment);
 
     } else {
       console.log(err);

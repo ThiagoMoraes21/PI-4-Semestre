@@ -5,7 +5,8 @@ const express = require('express'),
       mongoose = require('mongoose'),
       url = process.env.DATABASEURL || 'mongodb://localhost/black_bird',
       seedDB = require('./seeds'),
-      methodOverride = require('method-override');
+      methodOverride = require('method-override'),
+      expressSanitizer = require('express-sanitizer');
 
 
 // requesting routes
@@ -27,6 +28,8 @@ db.once('open', () => {
 //  setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
+app.use(express.json());
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 

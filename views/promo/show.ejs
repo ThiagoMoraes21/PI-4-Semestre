@@ -19,6 +19,7 @@
           <div class="comment-area">
             <ul class="list-group" id="comments-section">
               <!-- load comments  -->
+              <li>Test</li>
               <% post.comments.forEach(function(comment){ %>
                 <li class="list-group-item">
                   <span class="lead">
@@ -33,7 +34,8 @@
           
         <form action="/promocao/<%= post._id %>/comments" method="post" id="new-comment-form">
             <div class="form-group">
-              <input class="form-control" type="text" name="comment[text]" placeholder="Comentar...">
+              <input class="form-control" type="text" name="comment[text]" id="comment-input"
+               placeholder="Comentar...">
             </div>
             <div class="form-group">
               <button class="btn btn-primary" type="submit">Comentar</button>
