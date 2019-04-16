@@ -78,3 +78,20 @@ a.custom-card:hover {
   text-align: center;
   padding: 10px;
 }
+
+.list-group-item {
+  padding: 5px;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 10px;
+  border-radius: .25rem;
+  box-shadow: 5px 5px 15px rgba(63, 81, 181, 0.2);
+}
+
+.lead {
+  color: #000;
+  border-radius: 5px;
+  text-align: left;
+  padding: 5px;
+}
