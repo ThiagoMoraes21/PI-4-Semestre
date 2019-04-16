@@ -128,12 +128,14 @@ router.post('/:id/comments', (req, res) => {
       // create new comment 
       Comment.create(req.body.comment, (err, comment) => {
         if(!err) {
+          // save comment in the post
+          // comment.save();
+          // post.comments.push(comment);
+          // post.save();
+
           // sent the json containing the form input
           res.json(comment);
 
-          // save comment in the post
-          post.comments.push(comment);
-          post.save();
         } else {
           console.log(err);
           res.redirect('back');
