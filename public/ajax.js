@@ -15,7 +15,7 @@ $('#new-comment-form').submit(function(e){
         try {
             // append the new comment to the comments section
             $('#comments-section').append(
-              ` <li>
+              ` <li class="list-group-item">
                     <span class="lead">
                         ${comment.text}
                     </span>
