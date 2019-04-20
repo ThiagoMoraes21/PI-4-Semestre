@@ -9,6 +9,17 @@ img {
     --blue: #5B86E5;
 }
 
+.btn-loja {
+  background-color: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+  border-radius: 40px;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  width: 6.5rem;
+  padding: 3px;
+}
+
 /* header */
 .jumbotron{
   height: 45vh;
@@ -81,6 +92,11 @@ a.custom-card:hover {
   padding: 0.8rem;
 }
 
+.card-buttons {
+  text-align: center;
+  padding-top: 12px;
+}
+
 .card:hover {
   box-shadow: 0px 4px 15px rgba(63, 81, 181, 0.2);
 }
@@ -89,6 +105,7 @@ a.custom-card:hover {
     border-top-left-radius: calc(.50rem - 1px);
     border-top-right-radius: calc(.50rem - 1px);
     border-bottom: 1px solid #eaeaea;
+    margin-bottom: 10px;
 }
 
 .price {
@@ -107,7 +124,7 @@ a.custom-card:hover {
 }
 
 .votes {
-    top: 17rem;
+    top: 17.4rem;
     left: 16rem;
     width: 2.5rem;
     height: 2.5rem;

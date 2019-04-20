@@ -16,8 +16,12 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><%= post.name %></h5>
-              <p class="card-text"><%= post.description %></p>
-              <a href="<%= post.site %>" class="btn btn-primary">Ir à Loja</a>
+              <p class="card-text"><%= post.description.substring(0, 0) %></p>
+              <div class="card-buttons">
+                 <i class="far fa-bookmark"></i>
+                 <i class="far fa-comment-alt ml-1"></i>
+                 <a href="<%= post.site %>" class="btn btn-loja ml-3">Ir à Loja</a>
+              </div>
               <p class="votes"><%= post.votes %></p>
             </div>
         </div>

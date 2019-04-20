@@ -3,10 +3,12 @@
   <div class="container">
     <img src="<%= post.image %>" alt="<%= post.name %>">
     <a href="<%= post.site %>" class="btn btn-primary">Ir à Loja</a>
-    <a href="/promocao/<%= post._id %>/edit" class="btn btn-success">Editar</a>
-    <form action="/<%= post._id %>?_method=DELETE" method="post">
-      <button type="submit" class="btn btn-danger" name="button">Excluir</button>
-    </form>
+    <!--
+      <a href="/promocao/<%= post._id %>/edit" class="btn btn-success">Editar</a>
+      <form action="/<%= post._id %>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger" name="button">Excluir</button>
+      </form>
+    -->
     <p><%= post.price %></p>
     <p><%= post.votes %></p>
     <p><%= post.name %></p>
