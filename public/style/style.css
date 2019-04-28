@@ -10,14 +10,19 @@ img {
     min-height: 50%;
 }
 
-.row {
-  width: 100%;
-}
-
 :root {
     --purple: #3F51B5;
     --cyan: #36D1DC;
     --blue: #5B86E5;
+}
+
+.container {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.row {
+  width: 100%;
 }
 
 .btn-primary {
@@ -42,7 +47,9 @@ img {
   width: 6.5rem;
 }
 
-/* header */
+/*************
+  HEADER 
+**************/
 .jumbotron{
   height: 40vh;
   color: #fff;
@@ -65,7 +72,10 @@ img {
   left: 10vw;
 }
 
-/* menu */
+
+/**************** 
+  NAVBAR 
+******************/
 .navbar-toggler, .navbar-light .navbar-brand  {
   color: #fff;
   background: var(--purple);
@@ -89,11 +99,6 @@ img {
 
 .bg-none {
   background-color:var(--purple)!important;
-}
-
-.container {
-    padding-right: 8px;
-    padding-left: 8px;
 }
 
 .navbar-light .navbar-toggler, 
@@ -122,10 +127,15 @@ a.custom-card:hover {
   cursor: pointer;
 }
 
+
+/**************
+    CARDS
+****************/
+
 .card {
   border-radius: .50rem;
   border: none;
-  box-shadow: 0px 8px 25px rgba(63, 81, 181, 0.4);
+  box-shadow: 0px 8px 20px rgba(63, 81, 181, 0.4);
   width: 19rem;
   transition: all 0.2s ease-in-out;
   margin-bottom: 12px;
@@ -142,7 +152,7 @@ a.custom-card:hover {
 }
 
 .card:hover {
-  box-shadow: 0px 4px 15px rgba(63, 81, 181, 0.2);
+  box-shadow: 0px 2px 8px rgba(63, 81, 181, 0.6);
 }
 
 .card-img-top {
@@ -170,6 +180,7 @@ a.custom-card:hover {
     line-height: 2rem;
     border-radius: 40px;
     background-color: var(--purple);
+    z-index: 100;
 }
 
 .votes {
@@ -213,10 +224,12 @@ a.custom-card:hover {
   padding: 5px;
 }
 
+
+
 /* MEDIA QUERIES */
 
 /* cards */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1025px) {
   .card {
     width: 21.5rem;
   }
@@ -248,7 +261,7 @@ a.custom-card:hover {
     font-weight: 100;
     font-size: 2rem;
     color: #fff;
-    z-index: 100000;
+    z-index: 1;
     display: inline-block;
   }
 }
