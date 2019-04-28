@@ -1,15 +1,21 @@
 <% include ../partials/header %>
   <header>
     <div class="jumbotron mt-5">
-      <img src="/img/main-bg.svg" class="jumb-bg">
-     </div>
+      <div class="row">
+        <div class="presentation-header">
+          <p>A comunidade que encontra e compartilha as melhores ofertas!</p>
+          <a href="" class="btn btn-primary px-3 py-2">Registrar-se</a>
+        </div>
+        <img src="/img/main-bg.svg" class="jumb-bg">
+      </div>
+      </div>
   </header>
 
   <body>
     <div class="container">
       <div class="row">
           <% posts.forEach((post) => { %>
-          <div class="col-6 col-sm-6 col-md-4">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <a href="/promocao/<%= post._id %>" class="custom-card">
               <div class="card">
                 <div>
@@ -22,7 +28,7 @@
                   <div class="card-buttons">
                     <i class="far fa-bookmark"></i>
                     <i class="far fa-comment-alt ml-1"></i>
-                    <a href="<%= post.site %>" class="btn btn-loja ml-3">Ir à Loja</a>
+                    <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
                   </div>
                   <p class="votes"><%= post.votes %></p>
                 </div>

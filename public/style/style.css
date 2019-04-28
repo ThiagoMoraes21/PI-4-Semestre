@@ -16,20 +16,31 @@ img {
     --blue: #5B86E5;
 }
 
-.btn-loja {
+.btn-primary {
   background-color: var(--purple);
   color: #fff;
   border-color: var(--purple);
   border-radius: 40px;
+  box-shadow: -2px 6px 12px rgba(63, 81, 181, 0.6);
   font-size: 1.1rem;
   margin: 0 auto;
-  width: 6.5rem;
   padding: 3px;
+  transition: all 150ms ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  box-shadow: -2px 2px 3px rgba(63, 81, 181, 0.8);
+}
+
+.btn-loja {
+  width: 6.5rem;
 }
 
 /* header */
 .jumbotron{
-  height: 45vh;
+  height: 50vh;
   color: #fff;
   background: linear-gradient(125.11deg, #36D1DC 0%, #5B86E5 100%);
   border-radius: 0;
@@ -41,15 +52,42 @@ img {
   height: 100%;
 }
 
-.price, .votes {
-    position: absolute;
-    background: linear-gradient(125.11deg, #36D1DC 0%, #5B86E5 100%);
+.presentation-header {
+  position: absolute;
+  top: 20vh;
+  left: 2vw;
+  width: 40vw;
+  font-weight: 100;
+  font-size: 3rem;
+  color: #fff;
+  z-index: 100000;
+}
+
+.presentation-header a {
+  position: relative;
+  left: 10vw;
 }
 
 /* menu */
 .navbar-toggler, .navbar-light .navbar-brand  {
   color: #fff;
   background: var(--purple);
+}
+
+.mr-auto, .mx-auto {
+  margin-right: 15px!important;
+  margin-left: auto!important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.9rem;
+    padding-left: .9rem;
+    font-size: 1.07rem;
+    font-weight: 100;
+}
+
+.navbar-brand {
+  margin-left: 1rem;
 }
 
 .bg-none {
@@ -115,6 +153,11 @@ a.custom-card:hover {
     border-top-right-radius: calc(.50rem - 1px);
     border-bottom: 1px solid #eaeaea;
     margin-bottom: 10px;
+}
+
+.price, .votes {
+    position: absolute;
+    background: linear-gradient(125.11deg, #36D1DC 0%, #5B86E5 100%);
 }
 
 .price {
@@ -190,7 +233,7 @@ a.custom-card:hover {
 /* header */
 @media only screen and (min-width: 600px) {
   .jumbotron {
-    height: 75vh;
+    height: 80vh;
   }
 
   .jumb-bg {
