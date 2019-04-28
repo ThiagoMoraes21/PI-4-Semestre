@@ -10,6 +10,10 @@ img {
     min-height: 50%;
 }
 
+.row {
+  width: 100%;
+}
+
 :root {
     --purple: #3F51B5;
     --cyan: #36D1DC;
@@ -40,7 +44,7 @@ img {
 
 /* header */
 .jumbotron{
-  height: 50vh;
+  height: 40vh;
   color: #fff;
   background: linear-gradient(125.11deg, #36D1DC 0%, #5B86E5 100%);
   border-radius: 0;
@@ -53,14 +57,7 @@ img {
 }
 
 .presentation-header {
-  position: absolute;
-  top: 20vh;
-  left: 2vw;
-  width: 40vw;
-  font-weight: 100;
-  font-size: 3rem;
-  color: #fff;
-  z-index: 100000;
+  display: none;
 }
 
 .presentation-header a {
@@ -231,14 +228,41 @@ a.custom-card:hover {
 }
 
 /* header */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 640px) {
   .jumbotron {
-    height: 80vh;
+    height: 60vh;
   }
 
   .jumb-bg {
     width: 75vw;
     position: relative;
+    top: 2vh;
     left: 25%;
   }
+
+  .presentation-header {
+    position: absolute;
+    top: 20vh;
+    left: 2vw;
+    width: 40vw;
+    font-weight: 100;
+    font-size: 2rem;
+    color: #fff;
+    z-index: 100000;
+    display: inline-block;
+  }
 }
+
+@media only screen and (min-width: 980px) {
+  .jumbotron {
+    height: 75vh!important;
+  }
+
+  .jumb-bg {
+    top: -2vh;
+  }
+
+  .presentation-header {
+    font-size: 3rem!important;
+  }
+} 
