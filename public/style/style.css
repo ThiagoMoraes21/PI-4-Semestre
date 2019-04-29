@@ -76,9 +76,12 @@ img {
 /**************** 
   NAVBAR 
 ******************/
+.navbar {
+  transition: all 0.2s ease-in-out;
+}
+
 .navbar-toggler, .navbar-light .navbar-brand  {
   color: #fff;
-  background: var(--purple);
 }
 
 .mr-auto, .mx-auto {
@@ -97,8 +100,9 @@ img {
   margin-left: 1rem;
 }
 
-.bg-none {
+.bgColor {
   background-color:var(--purple)!important;
+  box-shadow: 0px 8px 20px rgba(63, 81, 181, 0.4);
 }
 
 .navbar-light .navbar-toggler, 
@@ -111,6 +115,10 @@ img {
     border-color: rgba(0,0,0,0);
 }
 
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #efefef;
+}
+
 .navbar-toggler{
   padding: 0;
 }
@@ -121,16 +129,27 @@ img {
     top: .4rem;
 }
 
+.nav-login {
+  background-color: var(--purple);
+  border-radius: 60px;
+  padding: 7px 20px!important;
+  box-shadow: 0px 8px 20px rgba(63, 81, 181, 0.4);
+  transition: all 150ms ease-in-out;
+}
+
+.nav-login:hover {
+  box-shadow: 0px 2px 3px rgba(63, 81, 181, 0.6);
+}
+
+/**************
+    CARDS
+****************/
+
 a.custom-card,
 a.custom-card:hover {
   color: inherit;
   cursor: pointer;
 }
-
-
-/**************
-    CARDS
-****************/
 
 .card {
   border-radius: .50rem;
@@ -243,7 +262,7 @@ a.custom-card:hover {
 /* header */
 @media only screen and (min-width: 640px) {
   .jumbotron {
-    height: 60vh;
+    height: 65vh;
   }
 
   .jumb-bg {
@@ -255,7 +274,7 @@ a.custom-card:hover {
 
   .presentation-header {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     left: 2vw;
     width: 40vw;
     font-weight: 100;
@@ -268,11 +287,11 @@ a.custom-card:hover {
 
 @media only screen and (min-width: 980px) {
   .jumbotron {
-    height: 75vh!important;
+    height: 85vh!important;
   }
 
   .jumb-bg {
-    top: -2vh;
+    top: vh;
   }
 
   .presentation-header {
