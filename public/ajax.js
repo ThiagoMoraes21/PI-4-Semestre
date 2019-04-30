@@ -4,15 +4,10 @@ $('#new-comment-form').submit(function(e){
 
     // take the current object and stringify it 
     let newComment = $(this).serialize();
-    console.log('newComment: ');
-    console.log(newComment);
-
+    let commentInput = $('#commentInput').val();
     // make the post request sending the new json data
     $.post('/:id/comments', newComment, function (comment) {
-        console.log('comment: ');
-        console.log(comment.text);
-        
-        try {
+        if(commentInput != undefined && commentInput != "" && commentInput != null) {
             // append the new comment to the comments section
             $('#comments-section').append(
               ` <li class="list-group-item">
@@ -21,11 +16,12 @@ $('#new-comment-form').submit(function(e){
                     </span>
                 </li>`
             );
-
+    
             // clear the input value
-            $('#comment-input').val('');
-        } catch(err) {
-            throw err;
+            $('#commentInput').val("");
+        } else {
+            console.log('NOOP');
         }
+
     });
 });

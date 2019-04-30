@@ -14,6 +14,11 @@
   <body>
     <div class="container">
       <div class="row">
+          <div class="col-12">
+            <hr class="col-3">
+            <h2 class="text-center">Top Ofertas</h2>
+            <hr class="col-3">
+          </div>
           <% posts.forEach((post) => { %>
           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <a href="/promocao/<%= post._id %>" class="custom-card">
