@@ -19,4 +19,19 @@ window.onload = function() {
             }
         }
     }
+
 }
+function toggleSection(id) {
+    let e = document.getElementById(id);
+    let arrow = document.querySelector('.fa-angle-down');
+
+    if(e.style.display == 'none'){
+        e.style.display = 'block';
+        arrow.classList.toggle('arrow-up');
+    } else {
+        e.style.display = 'none';
+        arrow.classList.toggle('arrow-up');
+    }
+}
+
+

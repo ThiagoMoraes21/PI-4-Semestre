@@ -20,7 +20,7 @@ $('#new-comment-form').submit(function(e){
             // clear the input value
             $('#commentInput').val("");
         } else {
-            console.log('NOOP');
+            console.log('comment input can\'t be empty!');
         }
 
     });

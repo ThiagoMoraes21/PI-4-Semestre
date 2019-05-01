@@ -2,7 +2,7 @@ const express = require('express'),
       router = express.Router({ mergeParams: true }),
       Post    = require('../models/post'),
       Comment = require('../models/comments');
-      
+let   pageId = "";
 
 // root route
 router.get('/', (req, res) => {
@@ -54,10 +54,10 @@ router.post('/', (req, res) => {
 /*****************
  *  SHOW ROUTE
 /*****************/
-var gambiarra;
+
 // show - promotion page information
 router.get('/:id', (req, res) => {
-  gambiarra = req.params.id;
+  pageId = req.params.id;
   // find post with the provided Id
   Post.findById(req.params.id).populate('comments').exec((err, postFound) => {
     if(err) {
@@ -121,29 +121,28 @@ router.delete('/:id', (req, res) => {
 
 //creating a new comment
 router.post('/:id/comments', (req, res) => {
-  console.log(gambiarra);
+  console.log(pageId);
+
   // create new comment 
   Comment.create(req.body.comment, (err, comment) => {
     if(!err) {
-      try{
-        // try to save the new comment and then push it to the current post
-        comment.save();
-        Post.findById(gambiarra, (err, post) => {
-          if(!err) {
-            console.log(comment);
-            post.comments.push(comment);
-            post.save();
-          } else {
-            console.log(err);
-          }
-        });
-      } catch(err) {
-        console.log(err);
-      } finally {
         // sent the json containing the form input
         res.json(comment);
-      }
 
+        // check if the comment text exists before save it in the database
+        if(comment.text != '' && comment.text != undefined && comment.text != null) {
+          // try to save the new comment and then push it to the current post
+          comment.save();
+          Post.findById(pageId, (err, post) => {
+            if(!err) {
+              //console.log(comment);
+              post.comments.push(comment);
+              post.save();
+            } else {
+              console.log(err);
+            }
+          });
+        }
     } else {
       console.log(err);
       res.redirect('back');
