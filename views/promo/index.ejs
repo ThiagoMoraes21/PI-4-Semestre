@@ -1,4 +1,6 @@
 <% include ../partials/header %>
+
+<!----------------- HEADER --------------------->
   <header id="indexPage">
     <div class="jumbotron">
       <div class="row">
@@ -19,6 +21,8 @@
             <h2 class="text-center">Top Ofertas</h2>
             <hr class="col-3">
           </div>
+
+          <!------------------------- LIST OF CARDS ---------------------->
           <% posts.forEach((post) => { %>
           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <a href="/promocao/<%= post._id %>" class="custom-card">
