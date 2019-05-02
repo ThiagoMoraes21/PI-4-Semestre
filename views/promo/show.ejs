@@ -38,15 +38,20 @@
       </div>
       
        <div class="comments-content" id="commentContent" style="display: none;">
-        <div class="comment-area">
+        <div class="comments-area">
             <ul class="list-group" id="comments-section">
               <!-- load comments  -->
               <% post.comments.forEach(function(comment){ %>
                 <li class="list-group-item">
-                  <span class="lead">
-                    <%= comment.text %>
-                  </span>
-                  <div class="clearfix"></div>
+                    <div class="row">
+                    <div class="col-2">
+                        <div class="user-pic-comment"><i class="fas fa-user"></i></div>
+                    </div>
+                    <span class="col-10 lead">
+                      <%= comment.text %>
+                    </span>
+                    <div class="clearfix"></div>
+                  </div>
                 </li>
               <% }); %>
             </ul>

@@ -11,9 +11,14 @@ $('#new-comment-form').submit(function(e){
             // append the new comment to the comments section
             $('#comments-section').append(
               ` <li class="list-group-item">
-                    <span class="lead">
-                        ${comment.text}
-                    </span>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="user-pic-comment"><i class="fas fa-user"></i></div>
+                        </div>
+                        <span class="col-10 lead">
+                            ${comment.text}
+                        </span>
+                    </div>
                 </li>`
             );
     
