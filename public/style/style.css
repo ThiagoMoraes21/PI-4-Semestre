@@ -7,7 +7,7 @@ body, html {
 
 img {
   width: 100%;
-  max-height: 60vh;
+  /* max-height: 60vh; */
 }
 
 :root {
@@ -25,8 +25,11 @@ h2 {
   padding-left: 8px;
 }
 
-.row {
+.row, .col-12 {
   width: 100%;
+  margin-right: 0px; 
+  margin-left: 0px;
+  padding: 0;
 }
 
 .mt-1, .my-1 {
@@ -68,13 +71,14 @@ h2 {
   background: linear-gradient(125.11deg, #36D1DC 0%, #5B86E5 100%);
   border-radius: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .jumb-bg {
   position: relative;
-  top: 8vh;
-  left: 4vw;
-  width: 100%;
+  top: 9vh;
+  left: 0vw;
+  width: 59vh;
   height: 100%;
 }
 
@@ -113,6 +117,11 @@ h2 {
 
 .navbar-brand {
   margin-left: 1rem;
+  color: #fff;
+}
+
+.navbar-brand:hover {
+  color: #fff;
 }
 
 .bgColor {
@@ -232,6 +241,12 @@ a.custom-card:hover {
   font-size: 1.2rem;
   display: inline;
   box-shadow: 0px 5px 10px rgba(63, 81, 181, 0.4);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.votes:hover {
+  box-shadow: 0px 2px 2px rgba(57, 73, 167, 0.9);
 }
 
 
@@ -428,8 +443,8 @@ a.custom-card:hover {
 
   .presentation-header {
     position: absolute;
-    top: 15vh;
-    left: 2vw;
+    top: 17vh;
+    left: 4vw;
     width: 40vw;
     font-weight: 100;
     font-size: 2rem;
@@ -441,11 +456,14 @@ a.custom-card:hover {
 
 @media only screen and (min-width: 980px) {
   .jumbotron {
-    height: 85vh!important;
+    height: 83vh!important;
   }
 
   .jumb-bg {
-    top: vh;
+    top: 6vh;
+    width: 75vw;
+    height: 75vh;
+    left: 20rem;
   }
 
   .presentation-header {
