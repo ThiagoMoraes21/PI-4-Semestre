@@ -3,6 +3,7 @@ window.onload = function() {
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.votes');
 
+    // count the votes of each element
     votes.forEach(function(e) {
         e.addEventListener('click', function(event) {
             let voteNum = parseInt(e.textContent);
@@ -12,12 +13,10 @@ window.onload = function() {
                 voteNum -= 1;
                 e.textContent = voteNum;
                 e.setAttribute('value', '');
-                console.log(e);
             } else {
                 voteNum += 1;
                 e.textContent = voteNum;
                 e.setAttribute('value', 'voted');
-                console.log(e);
             }
         })
     });

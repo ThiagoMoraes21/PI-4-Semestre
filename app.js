@@ -1,12 +1,15 @@
-const express = require('express'),
-      app     = express(),
-      port    = process.env.PORT || 3000,
-      bodyParser = require('body-parser'),
-      mongoose = require('mongoose'),
-      url = process.env.DATABASEURL || 'mongodb://localhost/black_bird',
-      seedDB = require('./seeds'),
-      methodOverride = require('method-override'),
-      expressSanitizer = require('express-sanitizer');
+const express           = require('express'),
+      app               = express(),
+      bodyParser        = require('body-parser'),
+      mongoose          = require('mongoose'),
+      seedDB            = require('./seeds'),
+      methodOverride    = require('method-override'),
+      expressSanitizer  = require('express-sanitizer'),
+      User              = require('./models/user'),
+      passport          = require('passport'),
+      LocalStrategy     = require('passport-local'),
+      port              = process.env.PORT || 3000,
+      url               = process.env.DATABASEURL || 'mongodb://localhost/black_bird';
 
 
 // requesting routes
@@ -33,6 +36,24 @@ app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
+// setup user authentication
+app.use(require('express-session')({
+    // passport config
+    secret: 'Bob is the best dog of the world',
+    resave: false,
+    saveUninitialized: false
+}));
+
+// init passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// require passport methods for authentication
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// config path routes
 app.use('/', indexRoutes);
 app.use('/promocao', indexRoutes);
 

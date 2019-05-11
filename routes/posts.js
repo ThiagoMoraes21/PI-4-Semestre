@@ -1,9 +1,15 @@
-const express = require('express'),
-      router = express.Router({ mergeParams: true }),
-      Post    = require('../models/post'),
-      Comment = require('../models/comments');
-let   pageId = "";
+const express   = require('express'),
+      router    = express.Router({ mergeParams: true }),
+      Post      = require('../models/post'),
+      Comment   = require('../models/comments'),
+      passport  = require('passport'),
+      User      = require('../models/user');
+let   pageId    = "";
 
+
+/*****************
+ *  INDEX ROUTE
+/*****************/
 // root route
 router.get('/', (req, res) => {
     Post.find({}, (err, allPosts) => {
@@ -16,6 +22,29 @@ router.get('/', (req, res) => {
     });
 });
 
+/*******************
+ *  REGISTER ROUTE
+/*******************/
+
+// register page
+router.get('/register', (req, res) => {
+  res.render('authentication/register');
+});
+
+// register logic
+router.post('/register', (req, res) => {
+  let newUser = new User({username: req.body.username, email: req.body.email});
+  User.register(newUser, req.body.password, (err, user) => {
+    if(!err) {
+      passport.authenticate('local')(req, res, function(){
+        console.log(`New user ${user.username}`);
+        res.redirect('/');
+      });
+    } else {
+      return res.render('authentication/register');
+    }
+  });
+});
 
 /*****************
  *  CREATE ROUTE 
