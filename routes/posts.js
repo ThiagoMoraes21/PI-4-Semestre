@@ -92,7 +92,7 @@ router.get('/logout', (req, res) => {
 /*****************/
 // new - show form to create a new post
 router.get('/new', isLoggedIn, (req, res) => {
-  res.render('promo/new');
+  res.render('promo/new', { currentUser: req.user});
 });
 
 // post - handle the post request on the client-side and create a new post 
