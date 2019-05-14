@@ -8,6 +8,7 @@ const express           = require('express'),
       User              = require('./models/user'),
       passport          = require('passport'),
       LocalStrategy     = require('passport-local'),
+      flash             = require('connect-flash'),
       port              = process.env.PORT || 3000,
       url               = process.env.DATABASEURL || 'mongodb://localhost/black_bird';
 
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
+app.use(flash());
 
 // setup user authentication
 app.use(require('express-session')({
@@ -43,6 +45,14 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
+
+// get the credential of the current user
+// app.use(function(req, res, next) {
+//     res.locals.currentUser = req.user;
+//     res.locals.error = req.flash('error');
+//     res.locals.success = req.flash('success');
+//     next();
+// });
 
 // init passport
 app.use(passport.initialize());

@@ -6,6 +6,17 @@ const express   = require('express'),
       User      = require('../models/user');
 let   pageId    = "";
 
+/*****************
+ *  MIDDLEWERES
+/*****************/
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login');
+  }
+}
+
 
 /*****************
  *  INDEX ROUTE
@@ -17,7 +28,7 @@ router.get('/', (req, res) => {
         console.log('Error trying to find posts');
         console.log(err); 
       } else {
-        res.render('promo/index', {posts: allPosts});
+        res.render('promo/index', {posts: allPosts, currentUser: req.user});
       }
     });
 });
@@ -28,29 +39,59 @@ router.get('/', (req, res) => {
 
 // register page
 router.get('/register', (req, res) => {
-  res.render('authentication/register');
+  res.render('authentication/register', { currentUser: req.user });
 });
 
 // register logic
 router.post('/register', (req, res) => {
-  let newUser = new User({username: req.body.username, email: req.body.email});
+  let newUser = new User({username: req.body.username});
   User.register(newUser, req.body.password, (err, user) => {
     if(!err) {
       passport.authenticate('local')(req, res, function(){
-        console.log(`New user ${user.username}`);
+        console.log(`New user ${ user.username }`);
+        req.flash('sucess', `Seja bem vindo, ${ user.username }!`);
         res.redirect('/');
       });
     } else {
+      req.flash('error', err.message);
+      console.log(err);
       return res.render('authentication/register');
     }
   });
 });
 
+/*******************
+ *  LOGIN ROUTE
+/*******************/
+
+// render the login page
+router.get('/login', (req, res) => {
+  res.render('authentication/login', { currentUser: req.user });
+});
+
+// handle the login logic
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login'
+}),
+  (req, res) => {
+    req.flash('sucess', `Bem vindo, ${ req.body.username }!`);
+    console.log(`Novo usuário logado: ${ req.body.username }`);
+  });
+
+// logout logic route
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success', `Até mais, ${ req.body.username }!`);
+  res.redirect('/');
+});
+
+
 /*****************
  *  CREATE ROUTE 
 /*****************/
 // new - show form to create a new post
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
   res.render('promo/new');
 });
 
@@ -70,7 +111,7 @@ router.post('/', (req, res) => {
     if(err) {
       console.log('Error trying to create the post');
       console.log(err);
-      res.render('/promo/new');
+      res.render('/promo/new', { currentUser: req.user });
     } else {
       // redirect to the new product page
       res.redirect(`/${createdPost._id}`);
@@ -94,7 +135,7 @@ router.get('/:id', (req, res) => {
       console.log(err);
     } else {
       // render show template 
-      res.render('promo/show', {post: postFound});
+      res.render('promo/show', { post: postFound, currentUser: req.user });
     }
   });
 });
@@ -104,11 +145,11 @@ router.get('/:id', (req, res) => {
 /*****************/
 
 // edit page
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', isLoggedIn, (req, res) => {
   // res.render('edit');
   Post.findById(req.params.id, (err, foundPost) => {
     if(!err) {
-      res.render('promo/edit', { post: foundPost });
+      res.render('promo/edit', { post: foundPost, currentUser: req.user });
     } else {
       console.log(err);
     }
@@ -149,7 +190,7 @@ router.delete('/:id', (req, res) => {
 /********************/
 
 //creating a new comment
-router.post('/:id/comments', (req, res) => {
+router.post('/:id/comments', isLoggedIn, (req, res) => {
   // create new comment 
   Comment.create(req.body.comment, (err, comment) => {
     if(!err) {
