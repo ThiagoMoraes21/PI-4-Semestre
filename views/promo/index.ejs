@@ -22,28 +22,50 @@
             <hr class="col-3">
           </div>
 
+          <div class="col-12">
+            <button type="button" data-filter="all">All</button>
+            <button type="button" data-filter=".celular">Celulares</button>
+            <button type="button" data-filter=".notebook">Notebooks</button>
+            <button type="button" data-filter=".tablet">Tablets</button>
+          </div>
+
+          <div class="col-12">
+            <button type="button" data-sort="order:asc">Ascending</button>
+            <button type="button" data-sort="order:descending">Descending</button>
+            <button type="button" data-sort="random">Random</button>
+          </div>
+
           <!------------------------- LIST OF CARDS ---------------------->
           <% posts.forEach((post) => { %>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <a href="/promocao/<%= post._id %>" class="custom-card">
-              <div class="card">
-                <div>
-                  <p class="price">R$<%= post.price %></p>
-                  <img src="<%= post.image %>" class="card-img-top" alt="...">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= post.name %></h5>
-                  <p class="card-text"><%= post.description.substring(0, 0) %></p>
-                  <div class="card-buttons">
-                    <i class="far fa-bookmark"></i>
-                    <i class="far fa-comment-alt ml-1"></i>
-                    <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
+            <% if(post.category == 'celular') { %>
+                <div class="mix celular" data-order="<%= post.votes %>">
+            <% } else if(post.category == 'notebook') { %>
+                <div class="mix notebook" data-order="<%= post.votes %>">
+           <% } else if(post.category == 'tablet') { %>
+                <div class="mix tablet" data-order="<%= post.votes %>">
+           <% } %>
+            <input type="hidden" name="postId" value="<%= post._id %>">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                <a href="/promocao/<%= post._id %>" class="custom-card">
+                  <div class="card">
+                      <div>
+                        <p class="price">R$<%= post.price %></p>
+                        <img src="<%= post.image %>" class="card-img-top" alt="...">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><%= post.name %></h5>
+                        <p class="card-text"><%= post.description.substring(0, 0) %></p>
+                        <div class="card-buttons">
+                          <i class="far fa-bookmark"></i>
+                          <i class="far fa-comment-alt ml-1"></i>
+                          <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
+                        </div>
+                        <p class="votes" value=""><%= post.votes %></p>
+                      </div>
                   </div>
-                  <p class="votes" value=""><%= post.votes %></p>
-                </div>
+                </a>
             </div>
-            </a>
-          </div>
+            </div>
           <% }); %>
       </div>
     </div>

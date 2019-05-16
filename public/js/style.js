@@ -1,25 +1,27 @@
 window.onload = function() {
+    var mixer = mixitup('.container');
     let navbar = document.querySelector('.navbar');
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.votes');
 
     // count the votes of each element
-    votes.forEach(function(e) {
-        e.addEventListener('click', function(event) {
-            let voteNum = parseInt(e.textContent);
-            let elValue = e.getAttribute('value');
+    // votes.forEach(function(e) {
+    //     e.addEventListener('click', function(event) {
+    //         let voteNum = parseInt(e.textContent);
+    //         let elValue = e.getAttribute('value');
+    //         console.log(post._id);
 
-            if(elValue != null && elValue != undefined && elValue != "") {
-                voteNum -= 1;
-                e.textContent = voteNum;
-                e.setAttribute('value', '');
-            } else {
-                voteNum += 1;
-                e.textContent = voteNum;
-                e.setAttribute('value', 'voted');
-            }
-        })
-    });
+    //         if(elValue != null && elValue != undefined && elValue != "") {
+    //             voteNum -= 1;
+    //             e.textContent = voteNum;
+    //             e.setAttribute('value', '');
+    //         } else {
+    //             voteNum += 1;
+    //             e.textContent = voteNum;
+    //             e.setAttribute('value', 'voted');
+    //         }
+    //     })
+    // });
     
     // verify if the current page is not the index page
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
