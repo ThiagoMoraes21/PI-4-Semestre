@@ -22,30 +22,17 @@
             <hr class="col-3">
           </div>
 
-          <div class="col-12">
-            <button type="button" data-filter="all">All</button>
-            <button type="button" data-filter=".celular">Celulares</button>
-            <button type="button" data-filter=".notebook">Notebooks</button>
-            <button type="button" data-filter=".tablet">Tablets</button>
-          </div>
-
-          <div class="col-12">
-            <button type="button" data-sort="order:asc">Ascending</button>
-            <button type="button" data-sort="order:descending">Descending</button>
-            <button type="button" data-sort="random">Random</button>
-          </div>
-
           <!------------------------- LIST OF CARDS ---------------------->
           <% posts.forEach((post) => { %>
             <% if(post.category == 'celular') { %>
-                <div class="mix celular" data-order="<%= post.votes %>">
+                <div class="mix celular col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
             <% } else if(post.category == 'notebook') { %>
-                <div class="mix notebook" data-order="<%= post.votes %>">
+                <div class="mix notebook col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
            <% } else if(post.category == 'tablet') { %>
-                <div class="mix tablet" data-order="<%= post.votes %>">
+                <div class="mix tablet col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
            <% } %>
             <input type="hidden" name="postId" value="<%= post._id %>">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="">
                 <a href="/promocao/<%= post._id %>" class="custom-card">
                   <div class="card">
                       <div>

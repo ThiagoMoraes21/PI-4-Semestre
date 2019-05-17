@@ -20,17 +20,17 @@ h2 {
   color: var(--purple);
 }
 
-.container {
+/* .container {
   padding-right: 8px;
   padding-left: 8px;
-}
+} */
 
-.row, .col-12 {
+/* .row {
   width: 100%;
   margin-right: 0px; 
   margin-left: 0px;
   padding: 0;
-}
+} */
 
 .mt-1, .my-1 {
   margin-top: .35rem!important;
@@ -179,7 +179,7 @@ a.custom-card:hover {
   border-radius: .50rem;
   border: none;
   box-shadow: 0px 8px 20px rgba(63, 81, 181, 0.4);
-  width: 19rem;
+  width: 18rem;
   transition: all 0.2s ease-in-out;
   margin-bottom: 12px;
   margin: 10px auto;
@@ -417,11 +417,13 @@ a.custom-card:hover {
 /* MEDIA QUERIES */
 
 /* cards */
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1050px) {
   .card {
-    width: 21.5rem;
+    width: 21rem!important;
   }
+}
 
+@media only screen and (min-width: 1025px) {
   .votes {
     top: 19.8rem;
     left: 18rem;
@@ -429,7 +431,11 @@ a.custom-card:hover {
 }
 
 /* header */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 680px) {
+  .card {
+    width: 19rem;
+  }
+
   .jumbotron {
     height: 65vh;
   }
@@ -470,3 +476,10 @@ a.custom-card:hover {
     font-size: 3rem!important;
   }
 } 
+
+/* containers */
+@media (max-width: 768px){
+  .container {
+      max-width: 670px;
+  }
+}
