@@ -158,10 +158,25 @@ router.get('/:id/edit', isLoggedIn, (req, res) => {
 
 // update router
 router.put('/:id', (req, res) => {
-  Post.findOneAndUpdate(req.params.id, req.body.post, (err, foundPost) => {
+  console.log(req.body.post);
+  var postId = req.body.post.cardId;
+
+  if(req.body.post.like) {
+    var vote = req.body.post.votes;
+    vote = (parseInt(vote) + 1);
+    req.body.post.votes = vote;
+
+  } else if(req.body.post.dislike) {
+    var vote = req.body.post.votes;
+    vote = (parseInt(vote) - 1);
+    req.body.post.votes = vote;
+  }
+  var query = { _id: postId };
+  Post.findOneAndUpdate(query, { votes: req.body.post.votes }, (err, foundPost) => {
     if(!err) {
-      // redirecio para a página do produto editado
-      res.redirect(`/${req.params.id}`);
+      // redireciona para a home page
+      console.log(foundPost);
+      res.redirect('/');
     } else {
       console.log(err);
     }

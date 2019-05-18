@@ -19,7 +19,6 @@ const commentsRoutes = require('./routes/comments');
 
 // setup database
 mongoose.connect(url, {useNewUrlParser: true});
-console.log(process.env.DATABASEURL);
 
 // testing db connection
 const db = mongoose.connection;
