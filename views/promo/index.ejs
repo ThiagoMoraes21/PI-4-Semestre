@@ -31,7 +31,6 @@
            <% } else if(post.category == 'tablet') { %>
                 <div class="mix tablet col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
            <% } %>
-            <input type="hidden" name="postId" value="<%= post._id %>">
             <div class="">
                 <a href="/promocao/<%= post._id %>" class="custom-card">
                   <div class="card">
@@ -42,9 +41,26 @@
                       <div class="card-body">
                         <h5 class="card-title"><%= post.name %></h5>
                         <p class="card-text"><%= post.description.substring(0, 0) %></p>
+                        
+                        <!---------------- Card buttons -------------->
                         <div class="card-buttons">
-                          <i class="far fa-bookmark"></i>
-                          <i class="far fa-comment-alt ml-1"></i>
+                          <!----- Like button ----->
+                          <form action="" method="post" style="display: inline-block;">
+                            <input type="hidden" name="like" value="<%= post._id %>">
+                            <button type="button" class="btn btn-success">
+                              <i class="far fa-thumbs-up"></i>
+                            </button>
+                          </form>
+                          
+                          <!----- Dislike button ------->
+                          <form action="" method="post" style="display: inline-block;">
+                            <input type="hidden" name="dislike" value="<%= post._id %>">
+                            <button type="button" class="btn btn-danger">
+                              <i class="far fa-thumbs-down"></i>
+                            </button>
+                          </form>
+
+                          <!--- Store button ----->
                           <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
                         </div>
                         <p class="votes" value=""><%= post.votes %></p>

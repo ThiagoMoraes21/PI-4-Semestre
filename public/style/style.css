@@ -194,6 +194,19 @@ a.custom-card:hover {
   padding-top: 12px;
 }
 
+.btn-success, .btn-danger {
+  border-color: var(--purple);
+  background-color: #fff;
+  color: var(--purple);
+}
+
+.btn-success:hover, .btn-danger:hover {
+  background-color: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
+
+
 .card:hover {
   box-shadow: 0px 2px 8px rgba(63, 81, 181, 0.6);
 }
@@ -414,12 +427,20 @@ a.custom-card:hover {
   transform: rotate(-180deg);
 }
 
+.container {
+  flex-wrap: wrap;
+}
+
 /* MEDIA QUERIES */
 
 /* cards */
 @media only screen and (min-width: 1050px) {
   .card {
     width: 21rem!important;
+  }
+  .row {
+    margin-left: -50px;
+    margin-right: -50px;
   }
 }
 
@@ -478,8 +499,14 @@ a.custom-card:hover {
 } 
 
 /* containers */
+@media (min-width: 992px) {
+  .container {
+      max-width: 1060px;
+  }
+}
+
 @media (max-width: 768px){
   .container {
-      max-width: 670px;
+    max-width: 670px;
   }
 }
