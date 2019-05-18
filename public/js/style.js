@@ -33,8 +33,10 @@ window.onload = function() {
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
         // if not, adds the class bgColor to the navbar
         navbar.classList.add('bgColor');
-    } else if (document.documentElement.scrollTop >= 150) {
-            navbar.classList.add('bgColor');
+    } 
+    
+    if (document.documentElement.scrollTop >= 150) {
+        navbar.classList.add('bgColor');
     } 
 
     window.onscroll = function() {

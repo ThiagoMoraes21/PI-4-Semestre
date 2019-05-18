@@ -7,7 +7,6 @@ body, html {
 
 img {
   width: 100%;
-  /* max-height: 60vh; */
 }
 
 :root {
@@ -19,18 +18,6 @@ img {
 h2 {
   color: var(--purple);
 }
-
-/* .container {
-  padding-right: 8px;
-  padding-left: 8px;
-} */
-
-/* .row {
-  width: 100%;
-  margin-right: 0px; 
-  margin-left: 0px;
-  padding: 0;
-} */
 
 .mt-1, .my-1 {
   margin-top: .35rem!important;
@@ -196,6 +183,7 @@ a.custom-card:hover {
 
 .btn-success, .btn-danger {
   border-color: var(--purple);
+  border-radius: 50%;
   background-color: #fff;
   color: var(--purple);
 }
@@ -206,6 +194,10 @@ a.custom-card:hover {
   border-color: var(--purple);
 }
 
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
 
 .card:hover {
   box-shadow: 0px 2px 8px rgba(63, 81, 181, 0.6);
@@ -325,7 +317,6 @@ a.custom-card:hover {
 
 .comments-content {
   padding: 10px;
-  /* display: none; */
   transition: all 0.2s ease-in-out;
 }
 

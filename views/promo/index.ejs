@@ -32,8 +32,8 @@
                 <div class="mix tablet col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
            <% } %>
             <div class="">
-                <a href="/promocao/<%= post._id %>" class="custom-card">
                   <div class="card">
+                    <a href="/promocao/<%= post._id %>" class="custom-card">
                       <div>
                         <p class="price">R$<%= post.price %></p>
                         <img src="<%= post.image %>" class="card-img-top" alt="...">
@@ -41,7 +41,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><%= post.name %></h5>
                         <p class="card-text"><%= post.description.substring(0, 0) %></p>
-                        
+                    </a>
                         <!---------------- Card buttons -------------->
                         <div class="card-buttons">
                           <!----- Like button ----->
@@ -66,7 +66,6 @@
                         <p class="votes" value=""><%= post.votes %></p>
                       </div>
                   </div>
-                </a>
             </div>
             </div>
           <% }); %>
