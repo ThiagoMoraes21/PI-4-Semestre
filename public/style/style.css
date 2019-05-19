@@ -560,9 +560,19 @@ a.custom-card:hover {
     line-height: 1.5rem;
     padding: 5px 15px;
   }
+  .comments-section {
+    width: 70vw;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1050px) {
+  .btn-pic-page {
+    position: absolute;
+    left: 65vw;
+    top: 65vh;
+    margin-top: 3vh;
+  }
   /* .info-body {
     margin-top: 14vh;
     margin-left: -5vw;
