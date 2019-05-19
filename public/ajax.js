@@ -42,13 +42,7 @@ $('form').submit(function(event) {
         data: formData,
         type: 'PUT',
         success: function(data) {
-            console.log('Success return: ');
-            data.votes = data.votes + 1;
-            console.log(data.votes);
-
-            $('.card').each(function(index, el){
-                console.log(el);
-            });
+            
         }
     });
 });

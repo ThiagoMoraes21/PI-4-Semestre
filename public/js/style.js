@@ -12,18 +12,32 @@ window.onload = function() {
 
     // count the votes of each element
     votes.forEach(function(e) {
-        e.addEventListener('click', function(event) {
-            let voteNum = parseInt(e.textContent);
-            let elValue = e.getAttribute('value');
-            let test = $('#test');
+        e.addEventListener('submit', function(event) {
+            // let liked = $('input[value="liked"]');
+            // let disliked = $('input[value="disliked"]');
+            let postId = e.getAttribute('action').split('/')[1];
+            let vote = e[2].getAttribute('value');
+            let points = document.querySelectorAll('.points');
+            console.log(postId);
+            console.log(vote);
+            console.log(points[0].getAttribute('value'));
 
-            if(elValue == 'liked') {
-                voteNum += 1;
-                test.textContent = voteNum;
-                // e.setAttribute('value', 'liked');
+            if(vote == 'liked') {
+                // search for the card's points and increment it 
+                for(let i = 0; i < points.length; i++) {
+                    if(postId == points[i].getAttribute('value')){
+                        points[i].textContent = (parseInt(points[i].textContent) + 1);
+                        return points[i].textContent;
+                    } 
+                }
             } else {
-                voteNum -= 1;
-                test.textContent = voteNum;
+                // search for the card's points and decrease it 
+                for (let i = 0; i < points.length; i++) {
+                    if (postId == points[i].getAttribute('value')) {
+                        points[i].textContent = (parseInt(points[i].textContent) - 1);
+                        return points[i].textContent;
+                    }
+                }
             }
         })
     });
