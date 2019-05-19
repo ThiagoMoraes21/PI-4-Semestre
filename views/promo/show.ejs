@@ -1,14 +1,14 @@
 <% include ../partials/header %>
 
 <!-------------- HEADER ----------------->
-<header>
-    <div class="pic-container mt-5">
+<div class="container-fluid">
+<header class="mt-5" style="margin: 0 auto; text-align: center;" >
+    <div class="pic-container mt-2">
       <img src="<%= post.image %>" alt="<%= post.name %>">  
     </div>
     <a href="<%= post.site %>" class="btn btn-primary btn-pic-page">Ir à Loja</a>
 </header>
 
-<div class="show-page">
     <!--
       <a href="/promocao/<%= post._id %>/edit" class="btn btn-success">Editar</a>
       <form action="/<%= post._id %>?_method=DELETE" method="post">
@@ -17,16 +17,18 @@
     -->
 
   <!------------------ INFO BODY -------------------------->
-    <div class="info-container">
-      <h4><%= post.name %></h4>
-      <div class="price-and-store">
-        <p class="price price-show-page">R$ <%= post.price %></p>
-        <p class="store-name">vendido por: <%= post.store %></p>
+    <div class="info-body">
+      <div class="info-container">
+        <h4><%= post.name %></h4>
+        <div class="price-and-store">
+          <p class="price price-show-page">R$ <%= post.price %></p>
+          <p class="store-name">vendido por: <%= post.store %></p>
+        </div>
       </div>
-    </div>
-    <div class="description">
-      <h5>Descrição</h5>
-      <p><%= post.description %></p>
+      <div class="description">
+        <h5>Descrição</h5>
+        <p><%= post.description %></p>
+      </div>
     </div>
   </div>
 
@@ -59,11 +61,15 @@
 
           
         <form action="/promocao/<%= post._id %>/comments" method="post" id="new-comment-form" class="form-inline">
-              <div class="form-group">
-                <input class="form-control comment-input" type="text" name="comment[text]" id="commentInput"
-                placeholder="Comentar...">
+              <div style="margin: 0 auto; display: -webkit-inline-box;">
+                <div class="form-group">
+                  <input class="form-control comment-input" type="text" name="comment[text]" id="commentInput"
+                  placeholder="Comentar...">
+                </div>
+                <button class="btn btn-primary btn-comment" type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
               </div>
-                <button class="btn btn-primary btn-comment" type="submit"><i class="fas fa-paper-plane"></i></button>
           </form>
       </div>
     </div>

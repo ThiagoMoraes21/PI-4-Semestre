@@ -6,7 +6,7 @@ body, html {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 :root {
@@ -19,6 +19,16 @@ h2 {
   color: var(--purple);
 }
 
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
 .mt-1, .my-1 {
   margin-top: .35rem!important;
 }
@@ -260,10 +270,10 @@ a.custom-card:hover {
 /**********************
   PRODUCT PAGE
 **********************/
-.show-page {
+/* .show-page {
   padding-left: 15px;
   padding-right: 15px;
-}
+} */
 
 .pic-container {
   /* desktop mesures */
@@ -277,8 +287,8 @@ a.custom-card:hover {
 
 .btn-pic-page {
   position: relative;
-  top: -3vh;
-  left: 35vw;
+  top: -2vh;
+  /* left: 35vw; */
   padding: 5px 15px;
 }
 
@@ -375,7 +385,6 @@ a.custom-card:hover {
   padding: 7px;
   border-radius: 50%;
   transition: all 150ms ease-in-out;
-  margin-top: -16px;
   margin-left: .25rem;
 }
 
@@ -385,7 +394,7 @@ a.custom-card:hover {
 
 .comment-input {
   outline: none;
-  width: 82vw;
+  max-width: 82vw!important;
   border: none;
   border-radius: 40px;
   box-shadow: 0px 8px 10px rgba(63, 81, 181, 0.6);
@@ -502,4 +511,69 @@ a.custom-card:hover {
   .container {
     max-width: 670px;
   }
+}
+
+@media (min-width: 590px) {
+  .container-fluid {
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 915px) {
+  .container-fluid {
+    flex-direction: row;
+    min-height: 90vh;
+  }
+  .info-body {
+    margin-top: 14vh;
+    margin-left: 5vw;
+    width: 50vw;
+  }
+  .store-name {
+    left: 13vw;
+  }
+  
+  .pic-container {
+    position: relative;
+    top: 4vh;
+    width: 40vw;
+    border-radius: 10px;
+  }
+
+  .pic-container img {
+    box-shadow: -2px 6px 14px rgba(63, 81, 181, 0.6);
+    border-radius: 10px;
+  }
+  .btn-pic-page {
+    position: absolute;
+    left: 72vw;
+    top: 73vh;
+    margin-top: 3vh;
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding: 5px 15px;
+  }
+}
+
+@media (min-width: 1050px) {
+  /* .info-body {
+    margin-top: 14vh;
+    margin-left: -5vw;
+    width: 50vw;
+  }
+  .pic-container {
+    position: relative;
+    top: 4vh;
+    left: -4vw;
+    width: 49vw;
+    border-radius: 10px;
+  } */
+  
 }

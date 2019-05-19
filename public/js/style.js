@@ -1,15 +1,7 @@
 window.onload = function() {
-    var mixer = mixitup('.container');
     let navbar = document.querySelector('.navbar');
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.vote');
-
-    // short cards by their points 
-    mixer.sort('order:desc')
-        .then(function (state) {
-            console.log(state.activeSort.attribute === 'order'); // true
-            console.log(state.activeSort.order === 'desc'); // true
-        });
 
     // count the votes of each element
     votes.forEach(function(e) {
@@ -45,7 +37,15 @@ window.onload = function() {
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
         // if not, adds the class bgColor to the navbar
         navbar.classList.add('bgColor');
-    } 
+    } else {
+        var mixer = mixitup('.container');
+        // short cards by their points 
+        mixer.sort('order:desc')
+            .then(function (state) {
+                console.log(state.activeSort.attribute === 'order'); // true
+                console.log(state.activeSort.order === 'desc'); // true
+            });
+    }
     
     if (document.documentElement.scrollTop >= 150) {
         navbar.classList.add('bgColor');
