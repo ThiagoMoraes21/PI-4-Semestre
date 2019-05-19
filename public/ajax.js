@@ -30,3 +30,25 @@ $('#new-comment-form').submit(function(e){
 
     });
 });
+
+$('form').submit(function(event) {
+    event.preventDefault();
+    var formData = $(this).serialize();
+    var formAction = $(this).attr('action');
+    console.log(formData);
+
+    $.ajax({
+        url: formAction,
+        data: formData,
+        type: 'PUT',
+        success: function(data) {
+            console.log('Success return: ');
+            data.votes = data.votes + 1;
+            console.log(data.votes);
+
+            $('.card').each(function(index, el){
+                console.log(el);
+            });
+        }
+    });
+});

@@ -158,25 +158,30 @@ router.get('/:id/edit', isLoggedIn, (req, res) => {
 
 // update router
 router.put('/:id', (req, res) => {
-  console.log(req.body.post);
-  var postId = req.body.post.cardId;
+  console.log(req.body);
+  var postId = req.body.cardId; // get the card's id
 
-  if(req.body.post.like) {
-    var vote = req.body.post.votes;
-    vote = (parseInt(vote) + 1);
-    req.body.post.votes = vote;
+  if(req.body.like) { // check if the request came from the like button
+    var vote = req.body.votes;
+    vote = (parseInt(vote) + 1); // increse vote number
+    req.body.votes = vote;
 
-  } else if(req.body.post.dislike) {
-    var vote = req.body.post.votes;
-    vote = (parseInt(vote) - 1);
-    req.body.post.votes = vote;
+  } else if(req.body.dislike) { // check if the request came from the dislike button
+    var vote = req.body.votes;
+    vote = (parseInt(vote) - 1); // decrese vote number
+    req.body.votes = vote;
   }
+
+  // declare the  query
   var query = { _id: postId };
-  Post.findOneAndUpdate(query, { votes: req.body.post.votes }, (err, foundPost) => {
+
+  // find the post by the provided id and updates it's points
+  Post.findOneAndUpdate(query, { votes: req.body.votes }, (err, foundPost) => {
     if(!err) {
-      // redireciona para a home page
+      // redirects to the home page
       console.log(foundPost);
-      res.redirect('/');
+      // res.redirect('/');
+      res.json(foundPost);
     } else {
       console.log(err);
     }

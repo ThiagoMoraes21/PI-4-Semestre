@@ -45,11 +45,11 @@
                         <!---------------- Card buttons -------------->
                         <div class="card-buttons">
                           <!----- Like button ----->
-                          <form action="/<%= post._id %>?_method=PUT" method="post" style="display: inline-block;">
-                            <input type="hidden" name="post[cardId]" value="<%= post._id %>">
-                            <input type="hidden" name="post[votes]" value="<%= post.votes %>">
-                            <input type="hidden" name="post[like]" value="liked">
-                            <button type="submit" class="btn btn-success">
+                          <form action="/<%= post._id %>" method="post" style="display: inline-block;" id="likeForm">
+                            <input type="hidden" name="cardId" value="<%= post._id %>">
+                            <input type="hidden" name="votes" value="<%= post.votes %>">
+                            <input type="hidden" name="like" value="liked">
+                            <button type="submit" class="btn btn-success vote">
                               <i class="far fa-thumbs-up"></i>
                             </button>
                           </form>
@@ -59,7 +59,7 @@
                             <input type="hidden" name="post[cardId]" value="<%= post._id %>">
                             <input type="hidden" name="post[votes]" value="<%= post.votes %>">
                             <input type="hidden" name="post[dislike]" value="disliked">
-                            <button type="submit" class="btn btn-danger">
+                            <button type="submit" class="btn btn-danger vote">
                               <i class="far fa-thumbs-down"></i>
                             </button>
                           </form>
@@ -67,7 +67,7 @@
                           <!--- Store button ----->
                           <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
                         </div>
-                        <p class="votes" value=""><%= post.votes %></p>
+                        <p class="votes" value="" id="test"><%= post.votes %></p>
                       </div>
                   </div>
             </div>
