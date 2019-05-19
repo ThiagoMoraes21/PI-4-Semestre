@@ -179,8 +179,6 @@ router.put('/:id', (req, res) => {
   Post.findOneAndUpdate(query, { votes: req.body.votes }, (err, foundPost) => {
     if(!err) {
       // redirects to the home page
-      console.log(foundPost);
-      // res.redirect('/');
       res.json(foundPost);
     } else {
       console.log(err);

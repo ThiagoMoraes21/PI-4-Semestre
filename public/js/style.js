@@ -4,6 +4,7 @@ window.onload = function() {
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.vote');
 
+    // short cards by their points 
     mixer.sort('order:desc')
         .then(function (state) {
             console.log(state.activeSort.attribute === 'order'); // true
@@ -13,8 +14,6 @@ window.onload = function() {
     // count the votes of each element
     votes.forEach(function(e) {
         e.addEventListener('submit', function(event) {
-            // let liked = $('input[value="liked"]');
-            // let disliked = $('input[value="disliked"]');
             let postId = e.getAttribute('action').split('/')[1];
             let vote = e[2].getAttribute('value');
             let points = document.querySelectorAll('.points');
