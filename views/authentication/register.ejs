@@ -1,22 +1,37 @@
 <% include ../partials/header %>
-    <div class="container mt-5">
-        <div class="row">
-            <h2 class="mt-5">Registrar-se</h2>
-            <form action="/register" method="post" class="col-12">
-                <div class="form-group">
-                    <label >Nome de usuário</label>
-                    <input type="text" class="form-control" name="username">
+    <div class="row mt-5 page-container">
+        <div class="col-12 col-md-6 pt-5" style="background: linear-gradient(137.73deg, #36D1DC 0%, #46B0E0 44.27%, #5B86E5 100%);">
+            <img src="/img/profile.svg" class="">
+        </div>
+        <div class="col-12 col-md-6 pt-5">
+            <div class="container">
+                <h2 class="mt-5 pt-5 pb-2 text-center">Registrar-se</h2>
+                <div class="container">
+                    <form action="/register" method="POST" class="col-12" style="color: var(--purple);">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-envelope" style="color: var(--purple);"></i> E-mail
+                            </label>
+                            <input type="text" class="form-control" name="username"
+                             style="border-radius: 20px;">
+                        </div>
+                        <div class="form-group">
+                            <label >
+                                <i class="fas fa-key"></i> Senha
+                            </label>
+                            <input type="password" class="form-control" name="password"
+                             style="border-radius: 20px;">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4 py-1 mt-2" value="login">Registrar</button>
+                        </div>
+
+                         <div class="mt-5 text-left">
+                            <a href="/register" style="text-decoration: underline;">Login</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label >Senha</label>
-                    <input type="password" class="form-control" name="password">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="termosUso">
-                    <label class="form-check-label" for="termosUso">Aceito os <a href="#">termos de uso</a></label>
-                </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
-            </form>
+            </div>
         </div>
     </div>
 <% include ../partials/footer %>
