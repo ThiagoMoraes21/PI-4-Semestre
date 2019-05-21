@@ -35,7 +35,7 @@
                   <div class="card">
                     <a href="/promocao/<%= post._id %>" class="custom-card">
                       <div>
-                        <p class="price">R$<%= post.price %></p>
+                        <p class="price">R$<%= post.price%></p>
                         <img src="<%= post.image %>" class="card-img-top" alt="...">
                       </div>
                       <div class="card-body">
@@ -67,7 +67,7 @@
                           <!--- Store button ----->
                           <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
                         </div>
-                        <p class="votes points" value="<%= post._id %>"><%= post.votes %></p>
+                        <p class="votes points" value="<%= post._id %>"><%= post.votes == undefined ? 0 : post.votes %></p>
                       </div>
                   </div>
             </div>

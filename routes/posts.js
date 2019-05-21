@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
         console.log('Error trying to find posts');
         console.log(err); 
       } else {
-        res.render('promo/index', {posts: allPosts, currentUser: req.user});
+        res.render('promo/index', {posts: allPosts, currentUser: req.user, currentPage: req.url});
       }
     });
 });
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 
 // register page
 router.get('/register', (req, res) => {
-  res.render('authentication/register', { currentUser: req.user });
+  res.render('authentication/register', { currentUser: req.user, currentPage: req.url });
 });
 
 // register logic
@@ -65,7 +65,7 @@ router.post('/register', (req, res) => {
 
 // render the login page
 router.get('/login', (req, res) => {
-  res.render('authentication/login', { currentUser: req.user });
+  res.render('authentication/login', { currentUser: req.user, currentPage: req.url });
 });
 
 // handle the login logic
