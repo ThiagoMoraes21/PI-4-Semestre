@@ -49,13 +49,12 @@ router.post('/register', (req, res) => {
     if(!err) {
       passport.authenticate('local')(req, res, function(){
         console.log(`New user ${ user.username }`);
-        req.flash('sucess', `Seja bem vindo, ${ user.username }!`);
         res.redirect('/');
       });
     } else {
-      req.flash('error', err.message);
+      console.log('Error: ');
       console.log(err);
-      return res.render('authentication/register');
+      res.render('authentication/register');
     }
   });
 });
@@ -103,6 +102,7 @@ router.post('/', (req, res) => {
     price: req.body.price,
     image: req.body.image,
     site: req.body.site,
+    category: req.body.category,
     description: req.body.desc
   }
 

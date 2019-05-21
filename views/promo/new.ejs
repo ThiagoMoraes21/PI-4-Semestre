@@ -1,29 +1,49 @@
 <% include ../partials/header %>
-  <div class="container">
-      <form action="/" method="post">
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Nome do Produto</label>
-          <input type="text" name="name" class="form-control" placeholder="Nome do produto">
+    <div class="row mt-5 page-container" style="height:100%">
+        <div class="col-12 col-md-6 pt-5" style="background: linear-gradient(137.73deg, #36D1DC 0%, #46B0E0 44.27%, #5B86E5 100%);">
+            <img src="/img/posting.svg" class="mt-5">
         </div>
-         <div class="form-group">
-          <label for="exampleFormControlInput1">Link do site</label>
-          <input type="text" name="site" class="form-control" placeholder="Link do site">
+        <div class="col-12 col-md-6 pt-2">
+            <div class="container">
+                <h2 class="pt-4 pb-2 text-center">Nova Oferta</h2>
+                <div class="container">
+                         <form action="/" method="post" style="color: var(--purple);"> 
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Nome do Produto</label>
+                              <input type="text" name="name" class="form-control" style="border-radius: 20px;">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Link do site</label>
+                              <input type="text" name="site" class="form-control" style="border-radius: 20px;">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Url da Imagem</label>
+                              <input type="text" name="image" class="form-control" style="border-radius: 20px;">
+                            </div>
+                           <div class="form-group">
+                            <label for="exampleFormControlInput1">Preço</label>
+                            <input type="text" name="price" class="form-control" style="border-radius: 20px;">
+                          </div> 
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Categoria</label>
+                              <select class="custom-select" name="category" style="border-radius: 20px;">
+                                  <option selected>Selecione...</option>
+                                  <option value="celular">Celular</option>
+                                  <option value="notebook">Notebook</option>
+                                  <option value="tablet">Table</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Descrição</label>
+                              <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                              style="border-radius: 10px;"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-4 py-1 mt-2" value="login">Postar Oferta</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Link da Imagem</label>
-          <input type="text" name="image" class="form-control" placeholder="Link da Imagem">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Preço</label>
-          <input type="text" name="price" class="form-control" placeholder="Preço">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Descrição</label>
-          <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Postar Oferta</button>
-        </div>
-  </form>
- </div>
+    </div>
 <% include ../partials/footer %>
