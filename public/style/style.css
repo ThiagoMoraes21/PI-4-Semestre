@@ -3,6 +3,7 @@ body, html {
   padding: 0;
   scroll-behavior: smooth;
   background-color: #eef5f9;
+  height: 100%;
 }
 
 img {
@@ -13,6 +14,7 @@ img {
   --purple: #3F51B5;
   --cyan: #36D1DC;
   --blue: #5B86E5;
+  --grad: linear-gradient(137.73deg, #36D1DC 0%, #46B0E0 44.27%, #5B86E5 100%);
 }
 
 h2 {
@@ -436,6 +438,17 @@ a.custom-card:hover {
 
 .container {
   flex-wrap: wrap;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+
+.page-container .row {
+  margin: 0;
 }
 
 /* MEDIA QUERIES */
