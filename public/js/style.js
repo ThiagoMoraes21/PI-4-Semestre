@@ -4,20 +4,50 @@ window.onload = function() {
     let votes = document.querySelectorAll('.vote');
 
     // count the votes of each element
-    votes.forEach(function(e) {
+    votes.forEach(function(e, index) {
         e.addEventListener('submit', function(event) {
-            let postId = e.getAttribute('action').split('/')[1];
-            let vote = e[2].getAttribute('value');
-            let points = document.querySelectorAll('.points');
-            let voted = false;
-            console.log(postId);
-            console.log(vote);
-            console.log(points[0].getAttribute('value'));
+            let postId = e.getAttribute('action').split('/')[1]; // get the id of the current card
+            let vote = e[2].getAttribute('value'); // get the vote - liked or disliked
+            let isVoted = e[3].getAttribute('class').split(' ')[2];
+            let points = document.querySelectorAll('.points'); // get all cars's ids
+            let cardButtons = document.querySelectorAll('.card-buttons');
+            console.log(index);
 
-            if(vote == 'liked') {
+            // console.log(card);
+            // console.log(postId);
+            // console.log(vote);
+            // console.log(points[0].getAttribute('value'));
+            // console.log(e[3].getAttribute('class').split(' ')[2]);
+
+            // let test = voteButtons[0].getAttribute('action').split('/')[1];
+            // console.log(postId);
+            // console.log('TEST: ' + test);
+
+            if(vote == 'liked' && isVoted == undefined) {
                 getPoints(postId, points, +1);
-            } else if(vote == 'disliked'){
+                toggleBtnClass(1);
+
+            } else if (vote == 'liked' && isVoted != undefined) { // cancel the previous liked vote
                 getPoints(postId, points, -1);
+                toggleBtnClass(1);
+
+            } else if (vote == 'disliked' && isVoted == undefined){
+                getPoints(postId, points, -1);
+                toggleBtnClass(0);
+
+            } else if(vote == 'disliked'&& isVoted != undefined) { // cancel the previous disliked vote
+                getPoints(postId, points, 1);
+                toggleBtnClass(0);
+            }
+
+            // toggle voted classes on click
+            function toggleBtnClass(el) {
+                for (let k = 0; k < cardButtons.length; k++) {
+                    if (postId == cardButtons[k].children[0][0].getAttribute('value')) {
+                        cardButtons[k].children[el][3].classList.remove('btn-voted');
+                        return e[3].classList.toggle('btn-voted');
+                    }
+                }
             }
 
             // get points 
@@ -25,7 +55,6 @@ window.onload = function() {
                 for (let i = 0; i < cardPoints.length; i++) {
                     if (cardId == cardPoints[i].getAttribute('value')) {
                         cardPoints[i].textContent = (parseInt(cardPoints[i].textContent) + vote);
-                        // e[2].setAttribute('value', 'liked_true');
                         return cardPoints[i].textContent;
                     }
                 }
@@ -49,10 +78,12 @@ window.onload = function() {
             });
     }
     
+    // checks if the page top is greater then 150px, if yes set the navbar color to purple
     if (document.documentElement.scrollTop >= 150) {
         navbar.classList.add('bgColor');
     } 
-
+    
+    // toggle navbar color on scroll
     window.onscroll = function() {
         // if the current page is the index page, it chages the color of the navbar on scroll
         if(isIndexPage != undefined && isIndexPage != "" && isIndexPage != null) {

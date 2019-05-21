@@ -23,7 +23,7 @@
           </div>
 
           <!------------------------- LIST OF CARDS ---------------------->
-          <% posts.forEach((post) => { %>
+          <% posts.forEach((post, index) => { %>
             <% if(post.category == 'celular') { %>
                 <div class="mix celular col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
             <% } else if(post.category == 'notebook') { %>
@@ -43,7 +43,7 @@
                     </a>
                         
                         <!---------------- Card buttons -------------->
-                        <div class="card-buttons">
+                        <div class="card-buttons" value="<%= post._id %>">
                           <!----- Like button ----->
                           <form action="/<%= post._id %>" method="post" class="vote" style="display: inline-block;">
                             <input type="hidden" name="cardId" value="<%= post._id %>">
