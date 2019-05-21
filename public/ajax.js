@@ -31,18 +31,18 @@ $('#new-comment-form').submit(function(e){
     });
 });
 
-// $('form').submit(function(event) {
-//     event.preventDefault();
-//     var formData = $(this).serialize();
-//     var formAction = $(this).attr('action');
-//     console.log(formData);
+$('.vote').submit(function(event) {
+    event.preventDefault();
+    var formData = $(this).serialize();
+    var formAction = $(this).attr('action');
+    console.log(formData);
 
-//     $.ajax({
-//         url: formAction,
-//         data: formData,
-//         type: 'PUT',
-//         success: function(data) {
+    $.ajax({
+        url: formAction,
+        data: formData,
+        type: 'PUT',
+        success: function(data) {
             
-//         }
-//     });
-// });
+        }
+    });
+});
