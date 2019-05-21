@@ -11,33 +11,22 @@ window.onload = function() {
             let isVoted = e[3].getAttribute('class').split(' ')[2];
             let points = document.querySelectorAll('.points'); // get all cars's ids
             let cardButtons = document.querySelectorAll('.card-buttons');
-            console.log(index);
-
-            // console.log(card);
-            // console.log(postId);
-            // console.log(vote);
-            // console.log(points[0].getAttribute('value'));
-            // console.log(e[3].getAttribute('class').split(' ')[2]);
-
-            // let test = voteButtons[0].getAttribute('action').split('/')[1];
-            // console.log(postId);
-            // console.log('TEST: ' + test);
 
             if(vote == 'liked' && isVoted == undefined) {
-                getPoints(postId, points, +1);
                 toggleBtnClass(1);
+                getPoints(postId, points, +1);
 
             } else if (vote == 'liked' && isVoted != undefined) { // cancel the previous liked vote
-                getPoints(postId, points, -1);
                 toggleBtnClass(1);
+                getPoints(postId, points, -1);
 
             } else if (vote == 'disliked' && isVoted == undefined){
-                getPoints(postId, points, -1);
                 toggleBtnClass(0);
+                getPoints(postId, points, -1);
 
             } else if(vote == 'disliked'&& isVoted != undefined) { // cancel the previous disliked vote
-                getPoints(postId, points, 1);
                 toggleBtnClass(0);
+                getPoints(postId, points, 1);
             }
 
             // toggle voted classes on click
@@ -45,13 +34,20 @@ window.onload = function() {
                 for (let k = 0; k < cardButtons.length; k++) {
                     if (postId == cardButtons[k].children[0][0].getAttribute('value')) {
                         cardButtons[k].children[el][3].classList.remove('btn-voted');
-                        return e[3].classList.toggle('btn-voted');
+                        e[3].classList.toggle('btn-voted');
                     }
                 }
             }
 
             // get points 
             function getPoints(cardId, cardPoints, vote) {
+                for (let k = 0; k < cardButtons.length; k++) {
+                    if (cardId == cardButtons[k].children[0][0].getAttribute('value')) {
+                        console.log(cardButtons[k].children[0][3].getAttribute('class').split(' ')[2]);
+                        console.log(cardButtons[k].children[1][3].getAttribute('class').split(' ')[2]);
+                    }
+                }
+
                 for (let i = 0; i < cardPoints.length; i++) {
                     if (cardId == cardPoints[i].getAttribute('value')) {
                         cardPoints[i].textContent = (parseInt(cardPoints[i].textContent) + vote);
@@ -62,7 +58,6 @@ window.onload = function() {
 
         });
     });
-
 
     // verify if the current page is not the index page
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
