@@ -9,30 +9,32 @@ window.onload = function() {
             let postId = e.getAttribute('action').split('/')[1];
             let vote = e[2].getAttribute('value');
             let points = document.querySelectorAll('.points');
+            let voted = false;
             console.log(postId);
             console.log(vote);
             console.log(points[0].getAttribute('value'));
 
             if(vote == 'liked') {
-                // search for the card's points and increment it 
-                for(let i = 0; i < points.length; i++) {
-                    if(postId == points[i].getAttribute('value')){
-                        points[i].textContent = (parseInt(points[i].textContent) + 1);
-                        return points[i].textContent;
-                    } 
-                }
-            } else {
-                // search for the card's points and decrease it 
-                for (let i = 0; i < points.length; i++) {
-                    if (postId == points[i].getAttribute('value')) {
-                        points[i].textContent = (parseInt(points[i].textContent) - 1);
-                        return points[i].textContent;
+                getPoints(postId, points, +1);
+            } else if(vote == 'disliked'){
+                getPoints(postId, points, -1);
+            }
+
+            // get points 
+            function getPoints(cardId, cardPoints, vote) {
+                for (let i = 0; i < cardPoints.length; i++) {
+                    if (cardId == cardPoints[i].getAttribute('value')) {
+                        cardPoints[i].textContent = (parseInt(cardPoints[i].textContent) + vote);
+                        // e[2].setAttribute('value', 'liked_true');
+                        return cardPoints[i].textContent;
                     }
                 }
             }
-        })
+
+        });
     });
-    
+
+
     // verify if the current page is not the index page
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
         // if not, adds the class bgColor to the navbar
@@ -81,5 +83,3 @@ function toggleSection(id) {
         arrow.classList.toggle('arrow-up');
     }
 }
-
-
