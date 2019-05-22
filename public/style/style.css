@@ -193,13 +193,17 @@ a.custom-card:hover {
   padding-top: 12px;
 }
 
-.btn-success, .btn-danger,
-.btn-success:active, .btn-danger:active,
-.btn-success:focus, .btn-danger:focus  {
+.btn-success, .btn-danger {
   border-color: var(--purple);
   border-radius: 50%;
   background-color: #fff;
   color: var(--purple);
+}
+
+.btn-success:active, .btn-danger:active,
+.btn-success:focus, .btn-danger:focus {
+  color: var(--purple);
+  background-color: #fff;
 }
 
 .btn-success:hover, .btn-danger:hover {
