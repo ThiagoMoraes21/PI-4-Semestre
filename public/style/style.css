@@ -207,8 +207,8 @@ a.custom-card:hover {
 }
 
 .btn-success:hover, .btn-danger:hover {
-  background-color: var(--purple);
-  color: #fff;
+  background-color: #fff;
+  color: var(--purple);
   border-color: var(--purple);
 }
 
@@ -566,6 +566,11 @@ footer .footerLogo {
   .flex-container {
     display: flex;
     flex-direction: row;
+  }
+  .btn-success:hover, .btn-danger:hover {
+    background-color: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
   }
 }
 @media (min-width: 915px) {
