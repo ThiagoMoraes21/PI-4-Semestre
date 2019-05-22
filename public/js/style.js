@@ -26,38 +26,39 @@ window.onload = function() {
             let isVoted = e[3].getAttribute('class').split(' ')[2];
             let points = document.querySelectorAll('.points'); // get all cars's ids
             let cardButtons = document.querySelectorAll('.card-buttons');
-            let likeVote = 1;
-            let dislikeVote = -1;
+
 
             let cards = document.querySelectorAll('.card');
             // cards[0].children[1].children[1] ====> card buttons
             // c[0].children[1].children[2] ======> votes
             console.log(cards);
 
-            for(let c = 0; c < cards.length; c++) {
-                // finds the postId inside the node list
-                if (postId == cards[c].children[1].children[1].getAttribute('value')) {
-                    // checks if the post was already voted
-                    dislikeVote = cards[c].children[1].children[1].children[0][3].getAttribute('class').split(' ')[2];
-                    likeVote = cards[c].children[1].children[1].children[1][3].getAttribute('class').split(' ')[2]
-                }
-            }
+            // for(let c = 0; c < cards.length; c++) {
+            //     // finds the postId inside the node list
+            //     if (postId == cards[c].children[1].children[1].getAttribute('value')) {
+            //         // checks if the post was already voted
+            //         dislikeVote = cards[c].children[1].children[1].children[0][3].getAttribute('class').split(' ')[2];
+            //         likeVote = cards[c].children[1].children[1].children[1][3].getAttribute('class').split(' ')[2];
+            //         console.log(dislikeVote);
+            //         console.log(likeVote);
+            //     }
+            // }
 
             if(vote == 'liked' && isVoted == undefined) {
+                getPoints(postId, points, 1, true);
                 toggleBtnClass(1);
-                getPoints(postId, points, +1);
 
             } else if (vote == 'liked' && isVoted != undefined) { // cancel the previous liked vote
+                getPoints(postId, points, -1, true);
                 toggleBtnClass(1);
-                getPoints(postId, points, -1);
 
             } else if (vote == 'disliked' && isVoted == undefined){
+                getPoints(postId, points, -1, false);
                 toggleBtnClass(0);
-                getPoints(postId, points, -1);
 
             } else if(vote == 'disliked'&& isVoted != undefined) { // cancel the previous disliked vote
+                getPoints(postId, points, 1, false);
                 toggleBtnClass(0);
-                getPoints(postId, points, 1);
 
             } 
 
@@ -72,11 +73,24 @@ window.onload = function() {
             }
 
             // get points 
-            function getPoints(cardId, cardPoints, vote) {
+            function getPoints(cardId, cardPoints, vote, wasLiked) {
                 for (let k = 0; k < cardButtons.length; k++) {
                     if (cardId == cardButtons[k].children[0][0].getAttribute('value')) {
+                        console.log(cardButtons[k].children[0][3]);
+                        console.log(cardButtons[k].children[1][3]);
                         console.log(cardButtons[k].children[0][3].getAttribute('class').split(' ')[2]);
                         console.log(cardButtons[k].children[1][3].getAttribute('class').split(' ')[2]);
+                        console.log(vote);
+                        dislikeVote = cardButtons[k].children[1][3].getAttribute('class').split(' ')[2];
+                        likeVote = cardButtons[k].children[0][3].getAttribute('class').split(' ')[2];
+
+                        // dislikeVote = cards[k].children[1].children[1].children[0][3].getAttribute('class').split(' ')[2];
+                        // likeVote = cards[k].children[1].children[1].children[1][3].getAttribute('class').split(' ')[2];
+                        if(dislikeVote != undefined && wasLiked != false) {
+                            vote += 1;
+                        } else if(likeVote != undefined && wasLiked != true) {
+                            vote -= 1;
+                        }
                     }
                 }
 
