@@ -18,6 +18,8 @@ const indexRoutes = require('./routes/posts');
 const commentsRoutes = require('./routes/comments');
 
 // setup database
+// command line: export DATABASEURL=mongodb://localhost/black_bird
+// mongoose.connect('mongodb://thiagoMoraes:323Sowhatthiago@ds259586.mlab.com:59586/epromo', {useNewUrlParser: true}); // test
 mongoose.connect(url, {useNewUrlParser: true});
 
 // testing db connection
