@@ -3,6 +3,21 @@ window.onload = function() {
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.vote');
 
+
+    // verify if the current page is not the index page
+    if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
+        // if not, adds the class bgColor to the navbar
+        navbar.classList.add('bgColor');
+    } else {
+        var mixer = mixitup('.container');
+        // short cards by their points 
+        mixer.sort('order:desc')
+            .then(function (state) {
+                console.log(state.activeSort.attribute === 'order'); // true
+                console.log(state.activeSort.order === 'desc'); // true
+            });
+    }
+
     // count the votes of each element
     votes.forEach(function(e, index) {
         e.addEventListener('submit', function(event) {
@@ -11,6 +26,22 @@ window.onload = function() {
             let isVoted = e[3].getAttribute('class').split(' ')[2];
             let points = document.querySelectorAll('.points'); // get all cars's ids
             let cardButtons = document.querySelectorAll('.card-buttons');
+            let likeVote = 1;
+            let dislikeVote = -1;
+
+            let cards = document.querySelectorAll('.card');
+            // cards[0].children[1].children[1] ====> card buttons
+            // c[0].children[1].children[2] ======> votes
+            console.log(cards);
+
+            for(let c = 0; c < cards.length; c++) {
+                // finds the postId inside the node list
+                if (postId == cards[c].children[1].children[1].getAttribute('value')) {
+                    // checks if the post was already voted
+                    dislikeVote = cards[c].children[1].children[1].children[0][3].getAttribute('class').split(' ')[2];
+                    likeVote = cards[c].children[1].children[1].children[1][3].getAttribute('class').split(' ')[2]
+                }
+            }
 
             if(vote == 'liked' && isVoted == undefined) {
                 toggleBtnClass(1);
@@ -27,7 +58,8 @@ window.onload = function() {
             } else if(vote == 'disliked'&& isVoted != undefined) { // cancel the previous disliked vote
                 toggleBtnClass(0);
                 getPoints(postId, points, 1);
-            }
+
+            } 
 
             // toggle voted classes on click
             function toggleBtnClass(el) {
@@ -58,20 +90,6 @@ window.onload = function() {
 
         });
     });
-
-    // verify if the current page is not the index page
-    if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
-        // if not, adds the class bgColor to the navbar
-        navbar.classList.add('bgColor');
-    } else {
-        var mixer = mixitup('.container');
-        // short cards by their points 
-        mixer.sort('order:desc')
-            .then(function (state) {
-                console.log(state.activeSort.attribute === 'order'); // true
-                console.log(state.activeSort.order === 'desc'); // true
-            });
-    }
     
     // checks if the page top is greater then 150px, if yes set the navbar color to purple
     if (document.documentElement.scrollTop >= 150) {

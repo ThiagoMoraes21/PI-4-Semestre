@@ -61,7 +61,7 @@ const posts = [
         image: `https://static.carrefour.com.br/medias/sys_master/images/images/h62/h0f/h00/h00/11180455559198.jpg`,
         site: "https://www.carrefour.com.br/Smartphone-Samsung-Galaxy-S9-SM-G9600ZKKZTO-128GB-Preto-Tela-5-8-Camera-12MP-Android-8-0/p/5285569?crfetp_rop=sem&crfetp_ed=google_dsa_lista&crfetp_ad=todos-os-produtos&crfetp_cnt=link_patrocinado&crfetp_trm=ecomm&utm_source=google_dsa_lista&utm_medium=sem&utm_campaign=todos-os-produtos&gclid=Cj0KCQjwkoDmBRCcARIsAG3xzl8TXtHnuqggiAfN0Q2cD4Q2TPChU_9njt4P_TEBjDbq48NsH-u5wgMaAre7EALw_wcB",
         description: `Procurando por um celular de qualidade e com multifunções? Então, sua busca acabou, pois você acabou de encontrar o Smartphone SM-G9600ZKKZTO Galaxy S9, da Samsung. Esse produto possui 128GB de memória interna, 4GB de memória RAM, tela Infinita de 5.8", resolução do vídeo UHD 4K, Super Slow Motion + 8MP frontal com Auto Focus, processador Octa-Core,  conecta-se via Wi-fi e Bluetooth e é Dual Chip.`,
-        votes: 43,
+        votes: 45,
         category: 'celular'
     },
     {

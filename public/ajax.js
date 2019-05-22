@@ -35,14 +35,13 @@ $('.vote').submit(function(event) {
     event.preventDefault();
     var formData = $(this).serialize();
     var formAction = $(this).attr('action');
-    console.log(formData);
 
     $.ajax({
         url: formAction,
         data: formData,
         type: 'PUT',
         success: function(data) {
-            
+            // do something
         }
     });
 });

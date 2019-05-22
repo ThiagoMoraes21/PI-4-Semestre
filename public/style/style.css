@@ -120,7 +120,7 @@ h2 {
 }
 
 .navbar-brand:hover {
-  color: #fff;
+  color: var(--purple)!important;
 }
 
 .bgColor {
@@ -446,6 +446,7 @@ a.custom-card:hover {
   margin: 0;
 }
 
+
 footer {
   width: 100%;
   min-height: 32vh;
@@ -453,6 +454,11 @@ footer {
   color: #fff;
   justify-content: space-between;
   padding: 0 30px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }
 
 footer li {
@@ -552,6 +558,10 @@ footer .footerLogo {
     margin-left: auto;
     display: flex;
     flex-direction: column;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
   }
 }
 @media (min-width: 915px) {

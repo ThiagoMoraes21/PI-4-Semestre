@@ -18,8 +18,6 @@ const indexRoutes = require('./routes/posts');
 const commentsRoutes = require('./routes/comments');
 
 // setup database
-// command line: export DATABASEURL=mongodb://localhost/black_bird
-// mongoose.connect('mongodb://thiagoMoraes:323Sowhatthiago@ds259586.mlab.com:59586/epromo', {useNewUrlParser: true}); // test
 mongoose.connect(url, {useNewUrlParser: true});
 
 // testing db connection
@@ -46,14 +44,6 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
-
-// get the credential of the current user
-// app.use(function(req, res, next) {
-//     res.locals.currentUser = req.user;
-//     res.locals.error = req.flash('error');
-//     res.locals.success = req.flash('success');
-//     next();
-// });
 
 // init passport
 app.use(passport.initialize());
