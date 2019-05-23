@@ -44,7 +44,7 @@
               <!-- load comments  -->
               <% post.comments.forEach(function(comment){ %>
                 <li class="list-group-item">
-                    <div class="row">
+                    <div class="row comments">
                     <div class="col-2">
                         <div class="user-pic-comment"><i class="fas fa-user"></i></div>
                     </div>
@@ -62,7 +62,7 @@
         <form action="/promocao/<%= post._id %>/comments" method="post" class="form-inline new-comment-form">
               <div style="margin: 0 auto; display: -webkit-inline-box;">
                 <div class="form-group">
-                  <input class="form-control comment-input" type="text" name="comment[text]" id="commentInput"
+                  <input class="form-control comment-input resp" type="text" name="comment[text]" id="commentInput"
                   placeholder="Comentar...">
                 </div>
                 <button class="btn btn-primary btn-comment" type="submit">

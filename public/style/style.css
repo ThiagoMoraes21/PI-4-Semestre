@@ -412,7 +412,7 @@ a.custom-card:hover {
 
 .toggle-btn {
   width: 100%;
-  height: 10vh;
+  height: 6vh;
   padding: 15px;
   text-align: center;
   font-size: 1.3rem;
@@ -618,8 +618,8 @@ footer .footerLogo {
 @media (min-width: 1050px) {
   .btn-pic-page {
     position: absolute;
-    left: 65vw;
-    top: 65vh;
+    left: 70vw;
+    top: 51vh;
     margin-top: 3vh;
   }
 }
@@ -645,7 +645,68 @@ footer .footerLogo {
 /* @media (min-width: 1400px) {
 } */
 
+@media (min-width: 700px) {
+    .comments {
+    padding-left: 50px;
+  }
+}
+
+@media (min-width: 500px) {
+  .comments-content {
+    width: 50vw;
+    margin: 0 auto;
+  }
+  .resp {
+    width: 25vw!important;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+   .toggle-btn {
+    width: 100%;
+    height: 6vh;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    background-color: #fff;
+    color: #303030;
+    box-shadow: 0px 8px 10px rgba(63, 81, 181, 0.6);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1000;
+}
+}
+
 @media (min-width: 1400px) {
+  .resp {
+    width: 25vw!important;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .toggle-btn {
+    width: 100%;
+    height: 6vh;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    background-color: #fff;
+    color: #303030;
+    box-shadow: 0px 8px 10px rgba(63, 81, 181, 0.6);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1000;
+}
+
+  .container-fluid {
+    flex-direction: row;
+    min-height: 90vh;
+    padding-left: 200px;
+    padding-right: 200px;
+}
   .jumbotron {
     height: 72vh!important;
   }
@@ -667,6 +728,7 @@ footer .footerLogo {
     margin: 0 auto;
   }
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
