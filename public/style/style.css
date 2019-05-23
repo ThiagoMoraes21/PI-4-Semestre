@@ -646,7 +646,7 @@ footer .footerLogo {
 } */
 
 @media (min-width: 700px) {
-    .comments {
+  .comments {
     padding-left: 50px;
   }
 }
