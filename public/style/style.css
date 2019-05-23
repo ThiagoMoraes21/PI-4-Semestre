@@ -636,7 +636,29 @@ footer .footerLogo {
   } */
   
 }
-@media (min-width: 992px) {
+
+@media (min-width: 590px) {
+  .flex-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 40px;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .col-xl-3 {
+      -ms-flex: 0 0 25%!important;
+      flex: 0 0 25%!important;
+      max-width: 35%;
+  }
+}
+
+/* @media (min-width: 1400px) {
+} */
+
+@media (min-width: 1400px) {
   .jumbotron {
     height: 72vh!important;
   }
