@@ -746,8 +746,10 @@ footer {
 ::-webkit-scrollbar {
   width: 0px!important;
   background: transparent!important;
+  display: none!important;
 }
 
 ::-webkit-scrollbar-thumb {
   background: transparent!important;
+  display: none!important;
 }
