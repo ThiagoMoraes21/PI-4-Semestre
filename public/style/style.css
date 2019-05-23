@@ -178,7 +178,7 @@ a.custom-card:hover {
   border-radius: .50rem;
   border: none;
   box-shadow: 0px 8px 20px rgba(63, 81, 181, 0.4);
-  width: 18rem;
+  width: 19rem;
   transition: all 0.2s ease-in-out;
   margin-bottom: 12px;
   margin: 10px auto;
@@ -622,19 +622,6 @@ footer .footerLogo {
     top: 65vh;
     margin-top: 3vh;
   }
-  /* .info-body {
-    margin-top: 14vh;
-    margin-left: -5vw;
-    width: 50vw;
-  }
-  .pic-container {
-    position: relative;
-    top: 4vh;
-    left: -4vw;
-    width: 49vw;
-    border-radius: 10px;
-  } */
-  
 }
 
 @media (min-width: 590px) {
