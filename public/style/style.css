@@ -615,11 +615,27 @@ footer .footerLogo {
   }
 }
 
+@media (max-width: 500px) {
+  .loggin-form{
+    margin-top: -81px!important;
+  }
+footer {
+    width: 100%;
+    min-height: 32vh;
+    background-color: var(--purple);
+    color: #fff;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+    top: 10vh;
+}
+}
+
 @media (min-width: 1050px) {
   .btn-pic-page {
     position: absolute;
     left: 70vw;
-    top: 51vh;
+    top: 50vh;
     margin-top: 3vh;
   }
 }
@@ -642,8 +658,6 @@ footer .footerLogo {
   }
 }
 
-/* @media (min-width: 1400px) {
-} */
 
 @media (min-width: 700px) {
   .comments {
