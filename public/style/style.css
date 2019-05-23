@@ -346,6 +346,13 @@ a.custom-card:hover {
  margin-top: -1.8rem;
 }
 
+.comments-area::-webkit-scrollbar {
+  width: 0px!important;
+  background: transparent!important;
+  display: none!important;
+  scrollbar-width: none;
+}
+
 .list-group-item {
   width: 100%;
   padding: 5px;
@@ -747,6 +754,7 @@ footer {
   width: 0px!important;
   background: transparent!important;
   display: none!important;
+  scrollbar-width: none!important;
 }
 
 ::-webkit-scrollbar-thumb {
