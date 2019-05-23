@@ -662,4 +662,8 @@ footer .footerLogo {
   .presentation-header {
     font-size: 3.8rem!important;
   } 
+  .comments-content {
+    width: 50vh;
+    margin: 0 auto;
+  }
 }
