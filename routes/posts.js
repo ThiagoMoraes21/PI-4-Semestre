@@ -208,13 +208,12 @@ router.delete('/:id', (req, res) => {
 /********************/
 
 //creating a new comment
-router.post('/:id/comments', isLoggedIn, (req, res) => {
+router.post('/:id/comments', (req, res) => {
   // create new comment 
   Comment.create(req.body.comment, (err, comment) => {
     if(!err) {
         // sent the json containing the form input content
         res.json(comment);
-
         // check if the comment text exists before save it in the database
         if(comment.text != '' && comment.text != undefined && comment.text != null) {
           // try to save the new comment and then push it to the current post
