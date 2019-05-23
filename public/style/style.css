@@ -636,3 +636,21 @@ footer .footerLogo {
   } */
   
 }
+@media (min-width: 992px) {
+  .jumbotron {
+    height: 72vh!important;
+  }
+  .container {
+      max-width: 1665px;
+      margin-bottom: 40px;
+  }
+  .jumb-bg {
+    top: 0vh;
+    width: 90vw;
+    height: 75vh;
+    left: 22rem;
+  }
+  .presentation-header {
+    font-size: 3.8rem!important;
+  } 
+}

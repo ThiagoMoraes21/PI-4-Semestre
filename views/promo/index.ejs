@@ -25,11 +25,11 @@
           <!------------------------- LIST OF CARDS ---------------------->
           <% posts.forEach((post, index) => { %>
             <% if(post.category == 'celular') { %>
-                <div class="mix celular col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
+                <div class="mix celular col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
             <% } else if(post.category == 'notebook') { %>
-                <div class="mix notebook col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
+                <div class="mix notebook col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
            <% } else if(post.category == 'tablet') { %>
-                <div class="mix tablet col-sm-6 col-md-6 col-lg-4" data-order="<%= post.votes %>">
+                <div class="mix tablet col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
            <% } %>
             <div class="">
                   <div class="card">
