@@ -751,9 +751,6 @@ footer .footerLogo {
     width: 50vh;
     margin: 0 auto;
   }
-  .comments {
-    padding-left: 100px;
-  }
 }
 
 ::-webkit-scrollbar {

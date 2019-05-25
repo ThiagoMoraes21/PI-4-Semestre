@@ -12,7 +12,7 @@ $('.new-comment-form').submit(function(e){
             // append the new comment to the comments section
             $('#comments-section').append(
               ` <li class="list-group-item">
-                    <div class="row">
+                    <div class="row comments">
                         <div class="col-2">
                             <div class="user-pic-comment"><i class="fas fa-user"></i></div>
                         </div>
