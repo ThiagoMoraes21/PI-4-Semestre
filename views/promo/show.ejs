@@ -6,7 +6,9 @@
     <div class="pic-container mt-2">
       <img src="<%= post.image %>" alt="<%= post.name %>">  
     </div>
-    <a href="<%= post.site %>" class="btn btn-primary btn-pic-page">Ir à Loja</a>
+    <div class="btn-loja-mobile">
+      <a href="<%= post.site %>" class="btn btn-primary btn-pic-page">Ir à Loja</a>
+    </div>
 </header>
 
     <!--
@@ -27,6 +29,9 @@
       <div class="description mt-3">
         <h5>Descrição</h5>
         <p><%= post.description %></p>
+      </div>
+      <div class="btn-loja-desktop">
+        <a href="<%= post.site %>" class="btn btn-primary btn-pic-desktop">Ir à Loja</a>
       </div>
     </div>
   </div>

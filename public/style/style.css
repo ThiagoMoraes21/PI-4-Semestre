@@ -276,15 +276,8 @@ a.custom-card:hover {
 /**********************
   PRODUCT PAGE
 **********************/
-/* .show-page {
-  padding-left: 15px;
-  padding-right: 15px;
-} */
 
 .pic-container {
-  /* desktop mesures */
-  /* max-width: 55vw;
-  max-height: 70vh; */
   border-bottom: 1px solid #eaeef1;
   max-width: 90vw;
   max-height: 70vh;
@@ -294,8 +287,11 @@ a.custom-card:hover {
 .btn-pic-page {
   position: relative;
   top: -2vh;
-  /* left: 35vw; */
   padding: 5px 15px;
+}
+
+.btn-pic-desktop {
+  display: none;
 }
 
 .price-and-store {
@@ -419,7 +415,7 @@ a.custom-card:hover {
 
 .toggle-btn {
   width: 100%;
-  height: 6vh;
+  height: 10vh;
   padding: 15px;
   text-align: center;
   font-size: 1.3rem;
@@ -606,15 +602,15 @@ footer .footerLogo {
     border-radius: 10px;
   }
   .btn-pic-page {
-    position: absolute;
-    left: 72vw;
-    top: 73vh;
-    margin-top: 3vh;
-    width: 7rem;
-    height: 2.5rem;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    padding: 5px 15px;
+    display: none;
+  }
+  .btn-loja-desktop {
+    display: block;
+    text-align: center;
+  }
+  .btn-pic-desktop {
+    display: inline-block;
+    padding: 3px 12px;
   }
   .comments-section {
     width: 70vw;
@@ -626,7 +622,7 @@ footer .footerLogo {
   .loggin-form{
     margin-top: -81px!important;
   }
-footer {
+  footer {
     width: 100%;
     min-height: 32vh;
     background-color: var(--purple);
@@ -634,16 +630,6 @@ footer {
     justify-content: space-between;
     padding: 0 30px;
     position: relative;
-    top: 10vh;
-}
-}
-
-@media (min-width: 1050px) {
-  .btn-pic-page {
-    position: absolute;
-    left: 70vw;
-    top: 50vh;
-    margin-top: 3vh;
   }
 }
 
@@ -685,7 +671,7 @@ footer {
   }
    .toggle-btn {
     width: 100%;
-    height: 6vh;
+    height: 8vh;
     padding: 15px;
     text-align: center;
     font-size: 1.3rem;
@@ -723,8 +709,6 @@ footer {
 }
 
   .container-fluid {
-    flex-direction: row;
-    min-height: 90vh;
     padding-left: 200px;
     padding-right: 200px;
 }
@@ -739,7 +723,7 @@ footer {
     top: 0vh;
     width: 90vw;
     height: 75vh;
-    left: 22rem;
+    left: 26rem;
   }
   .presentation-header {
     font-size: 3.8rem!important;

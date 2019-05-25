@@ -17,7 +17,6 @@ function isLoggedIn(req, res, next) {
   }
 }
 
-
 /*****************
  *  INDEX ROUTE
 /*****************/
