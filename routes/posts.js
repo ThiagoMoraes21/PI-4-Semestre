@@ -24,8 +24,8 @@ function isLoggedIn(req, res, next) {
 router.get('/', (req, res) => {
     Post.find({}, (err, allPosts) => {
       if(err) {
-        console.log('Error trying to find posts');
         console.log(err); 
+        res.redirect('back');
       } else {
         res.render('promo/index', {posts: allPosts, currentUser: req.user, currentPage: req.url});
       }
@@ -130,8 +130,8 @@ router.get('/:id', (req, res) => {
   // find post with the provided Id
   Post.findById(req.params.id).populate('comments').exec((err, postFound) => {
     if(err) {
-      console.log('Error trying to find the post');
       console.log(err);
+      res.render('notFound', { currentUser: req.user, currentPage: req.url });
     } else {
       // render show template 
       res.render('promo/show', { post: postFound, currentUser: req.user });
@@ -151,6 +151,7 @@ router.get('/:id/edit', isLoggedIn, (req, res) => {
       res.render('promo/edit', { post: foundPost, currentUser: req.user });
     } else {
       console.log(err);
+      res.redirect('back');
     }
   });
 });
@@ -181,6 +182,7 @@ router.put('/:id', (req, res) => {
       res.json(foundPost);
     } else {
       console.log(err);
+      res.redirect('back');
     }
   });
 });
@@ -197,6 +199,7 @@ router.delete('/:id', (req, res) => {
       res.redirect('/');
     } else {
       console.log(err);
+      res.redirect('back');
     }
   });
 });
@@ -234,6 +237,10 @@ router.post('/:id/comments', (req, res) => {
       res.redirect('back');
     }
   });
+});
+
+router.get('*', (req, res) => {
+  res.render('../notFound');
 });
 
 module.exports = router;

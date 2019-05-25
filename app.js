@@ -60,7 +60,7 @@ app.use('/promocao', indexRoutes);
 
 // Page not found
 app.get('*', (req, res) => {
-    res.send('404 page not found!');
+    res.render('/notFound');
 });
 
 // starts server
