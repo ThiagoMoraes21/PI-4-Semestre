@@ -611,6 +611,7 @@ footer .footerLogo {
   .btn-pic-desktop {
     display: inline-block;
     padding: 3px 12px;
+    margin-bottom: 20px;
   }
   .comments-section {
     width: 70vw;
