@@ -239,8 +239,4 @@ router.post('/:id/comments', (req, res) => {
   });
 });
 
-router.get('*', (req, res) => {
-  res.render('../notFound');
-});
-
 module.exports = router;
