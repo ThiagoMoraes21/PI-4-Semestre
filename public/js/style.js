@@ -3,7 +3,6 @@ window.onload = function() {
     let isIndexPage = document.querySelector('#indexPage');
     let votes = document.querySelectorAll('.vote');
 
-
     // verify if the current page is not the index page
     if (isIndexPage == undefined || isIndexPage == "" || isIndexPage == null) {
         // if not, adds the class bgColor to the navbar
@@ -23,12 +22,11 @@ window.onload = function() {
         e.addEventListener('submit', function(event) {
             let postId = e.getAttribute('action').split('/')[1]; // get the id of the current card
             let vote = e[2].getAttribute('value'); // get the vote - liked or disliked
-            let isVoted = e[3].getAttribute('class').split(' ')[2];
+            let isVoted = e[3].getAttribute('class').split(' ')[2]; // get the voted class of a card
             let points = document.querySelectorAll('.points'); // get all cars's ids
-            let cardButtons = document.querySelectorAll('.card-buttons');
-            let cards = document.querySelectorAll('.card');
+            let cardButtons = document.querySelectorAll('.card-buttons'); // get the elements of the card buttons container
 
-            if(vote == 'liked' && isVoted == undefined) {
+            if(vote == 'liked' && isVoted == undefined) { // add one point to the card's votes
                 getPoints(postId, points, 1, true);
                 toggleBtnClass(1);
 
@@ -36,11 +34,11 @@ window.onload = function() {
                 getPoints(postId, points, -1, true);
                 toggleBtnClass(1);
 
-            } else if (vote == 'disliked' && isVoted == undefined){
+            } else if (vote == 'disliked' && isVoted == undefined){ // subtracts one point from the card's votes
                 getPoints(postId, points, -1, false);
                 toggleBtnClass(0);
 
-            } else if(vote == 'disliked'&& isVoted != undefined) { // cancel the previous disliked vote
+            } else if(vote == 'disliked' && isVoted != undefined) { // cancel the previous disliked vote
                 getPoints(postId, points, 1, false);
                 toggleBtnClass(0);
 
@@ -82,18 +80,27 @@ window.onload = function() {
     });
     
     // checks if the page top is greater then 150px, if yes set the navbar color to purple
-    if (document.documentElement.scrollTop >= 150) {
+    if (document.documentElement.scrollTop >= 150 || document.documentElement.clientWidth < 992) {
         navbar.classList.add('bgColor');
-    } 
-    
+    }
+
+    // toggle navbar color on window resize
+    window.onresize = function(){
+        if (document.documentElement.clientWidth < 992) {
+            navbar.classList.add('bgColor');
+        } else {
+            navbar.classList.remove('bgColor');
+        }
+    }
+
     // toggle navbar color on scroll
     window.onscroll = function() {
         // if the current page is the index page, it chages the color of the navbar on scroll
         if(isIndexPage != undefined && isIndexPage != "" && isIndexPage != null) {
             // checks if the page was scrolled
-            if(document.documentElement.scrollTop >= 150) {
+            if (document.documentElement.scrollTop >= 150 && document.documentElement.clientWidth > 992) {
                 navbar.classList.add('bgColor');
-            } else {
+            } else if (document.documentElement.clientWidth > 992) {
                 // if it's in the top, take off the class with the color
                 navbar.classList.remove('bgColor');
             }
