@@ -13,33 +13,57 @@ const posts = [
     {
         name: 'iPhone 7 Apple 3D Touch, iOS 11, Touch ID',
         description: `Apple: iPhone 7 Apple 3D Touch, iOS 11, Touch ID, Câm.12MP, Resistente à Água e Sistema de Alto-falantes Estéreo, 32GB, Preto Matte, Tela HD de 4,7"`,
-        price: '2.249,10',
+        price: '2.535,55',
         image: `https://www.casasbahia-imagens.com.br/TelefoneseCelulares/Smartphones/iPhone/11526479/830716826/iphone-7-apple-3d-touch-ios-11-touch-id-cam-12mp-resistente-a-agua-e-sistema-de-alto-falantes-estereo-32gb-preto-matte-tela-hd-de-47-11526479.jpg`,
         site: 'https://www.casasbahia.com.br/TelefoneseCelulares/Smartphones/iPhone/iphone-7-apple-3d-touch-ios-11-touch-id-cam-12mp-resistente-a-agua-e-sistema-de-alto-falantes-estereo-32gb-preto-matte-tela-hd-de-47-11526479.html?gclid=CjwKCAjwmq3kBRB_EiwAJkNDp7rFSILzbsP1yheEoAUaCrZz2SXp9PLBuCHJTlZwAh7jLH66FoB4iBoCMX0QAvD_BwE&utm_medium=Cpc&utm_source=GP_PLA&IdSku=11526479&idLojista=10037&s_kwcid=AL!427!3!243930487418!!!g!433246525874!&utm_campaign=Tele_Apple_Shopping&ef_id=XFTd4AAAAFx3g1Kl:20190315160335:s',
         votes: 53,
         category: 'celular'
     },
     {
-        name: "iPhone 8",
-        price: "2.872,77",
-        image: "https://www.pontofrio-imagens.com.br/TelefoneseCelulares/Smartphones/iPhone/13375270/990411514/iphone-8-apple-com-ios-11-camera-de-12-mp-resistente-a-agua-wi-fi-4g-lte-e-nfc-64gb-cinza-espacial-tela-hd-de-47-13375270.jpg",
-        site: "https://www.pontofrio.com.br/TelefoneseCelulares/Smartphones/iPhone/iphone-8-apple-com-ios-11-camera-de-12-mp-resistente-a-agua-wi-fi-4g-lte-e-nfc-64gb-cinza-espacial-tela-hd-de-47-13375270.html?gclid=CjwKCAjwmq3kBRB_EiwAJkNDp4FqPec-qqa8FDHj8-sm7ak7_D4yQSrFtxb1Uyzp6nkHIl8MCt8ejRoCgOEQAvD_BwE&utm_medium=cpc&utm_source=gp_pla&IdSku=13375270&idLojista=16&s_kwcid=AL!427!3!239570166163!!!g!433246525874!&utm_campaign=Tele_Apple_Shopping&ef_id=XFTd4AAAAFx3g1Kl:20190315170321:s",
-        description: "Apple com iOS 11, Câmera de 12 MP, Resistente à Água, Wi-Fi, 4G LTE e NFC, 64GB, Cinza-Espacial, Tela HD de 4,7\"",
-        votes: 10,
+        name: "iPhone 8 Cinza Espacial, com Tela de 4,7”, 4G, 64 GB e Câmera de 12 MP",
+        price: "2.878,29",
+        image: "https://io.fastshop.com.br/wcsstore/FastShopCAS/imagens/_AE_Apple/AEMQ6G2BRACNZ/AEMQ6G2BRACNZ_PRD_447_1.jpg",
+        site: "https://www.fastshop.com.br/web/p/d/AEMQ6G2BRACNZ_PRD/iphone-8-cinza-espacial-com-tela-de-47-4g-64-gb-e-camera-de-12-mp-mq6g2bra",
+        description: "Design inovador, totalmente em vidro. A câmera que o mundo inteiro adora, ainda melhor. O chip mais poderoso e inteligente em qualquer smartphone. Recarga sem fio simples de verdade. E experiências de realidade aumentada envolventes como nunca. O iPhone 8 é brilhante. É uma nova geração do iPhone.",
+        votes: 15,
         category: 'celular'
     },
     {
-        name: `Smartphone Samsung Galaxy A30 Dual Tela 6.4 32Gb Sd 32Gb`,
-        price: "1.599,90",
-        image: `https://static.carrefour.com.br/medias/sys_master/images/images/ha8/h5d/h00/h00/13592782962718.jpg`,
-        site: "https://www.carrefour.com.br/Smartphone-Samsung-Galaxy-A30-Dual-Tela-6-4-32Gb-Sd-32Gb/p/MV15529549?crfint=product|chaordic|novidades_que_chegaram_pra_voce|Samsung|MV15529549|2",
-        description: `Tela: touchscreen capacitivo multitouch com proteção corning gorilla glass 3..modelo: sma305g/ds..polegadas: 6.4, 100,5 cm2 ( 84,9% da relação telaparacorpo)..bluetooth: 5.0, a2dp, le..wifi: 802.11 a/b/g/n/ac, dualband, wifi direct, hotspot..energia / voltagem: carregador: ac 100240v 50/60hz..conexões: usb tipoc , usb 2.0, jack audio 3.5mm..sistema operacional: android 9.0 (pie)..resolução: 1080 x 2340 pixels, taxa 19,5: 9 (403 ppi de densidade)..video: mpeg4, aac+, aaclc, amrnb, amrwb, divx, evrc, flac, h.263, h.264, h265/hevc, midi, mp3, opus, pc..cor: branco..chip: dual sim (nanosim, dual standby)..frequência 2g: gsm: 850/900/1800/1900 sim 1 & sim 2..frequência 3g: wcdma: 850/900/(1700/2100)/1900mhz..frequência 4g: lte: (20)800, (b5)850, (b8)900, (b4)1700/2100, (3)1800, (2)1900, (7)2600mhz..display: super amoled..câmera: traseira: 16mp + 5 mp com led flash video 1080p 30fps frontal 16mp..processador cpu: octacore exynos 7904 octa (14 nm) gpu malig71 mp2..memória: interna: 32gb/3gb ram suporta cartão microsd de até 512gb (incluído de 32gb)..conectividade: agps, glonass, bds, rádio fm..áudio: 3gp, 3g2, aac, avi, adts, awb, divx, flac, imy, mid, mkv, mp3, mpeg4, mxmf, ogg, ota, rtttl, rtx, w..sensor: impressão digital (montada na traseira), acelerômetro, proximidade, bússola..dimensões: celular: 158.5 x 74.7 x 7.7 mm embalagem: 50 x 85 x 170mm..peso: celular: 165g embalagem: 345g..bateria: não removível lipo 4000 mah..anatel: 0385041597`,
+        name: `Smartphone Samsung Galaxy M10 32GB Dual Chip Android 8.1 Tela 6,2" Octa-Core 4G Câmera 13+5MP - Azul`,
+        price: "809,10",
+        image: `https://images-americanas.b2w.io/produtos/01/00/oferta/134253/7/134253775_1GG.jpg`,
+        site: "https://www.americanas.com.br/produto/134253767?opn=YSMESP&loja=02&epar=bp_pl_00_go_pla_tel_smartphone_todas_geral_apostas&WT.srch=1&acc=e789ea56094489dffd798f86ff51c7a9&i=5612cbe46ed24cafb5cae011&o=5cd33d3d6c28a3cb50bdf36a&gclid=Cj0KCQjwuLPnBRDjARIsACDzGL2Xd1ovi23nIMjEYp087UuLfv6yOKNTaIbJFKQE_FhDljnSRnFiVGEaAh7FEALw_wcB",
+        description: `Código	134253767
+                    Código de barras	7892509108355, 7892509108256
+                    NFC	Não
+                    Conexões	Wi-Fi,3G,4G
+                    Peso liq. aproximado do produto (Kg)	163g
+                    Banda	B1(2100), B2(1900), B4(AWS), B5(850), B8(900)
+                    Tipo de Tela	LCD TFT
+                    Tipo de Chip	Nano Chip
+                    Memória Ram	3GB
+                    Referência do Modelo	Galaxy M10
+                    Filmadora	Full HD
+                    Cor - ficha técnica	Azul
+                    Sistema Operacional	Android
+                    Outros Recursos	null
+                    Recursos de chamada	Viva Voz
+                    Multichip	Dual Chip
+                    Fabricante	Samsung
+                    Versão S.O.	Android 8.1
+                    Memória Interna	32GB
+                    Expansivo até?	MicroSD até 512GB
+                    Câmera Frontal	5MP
+                    Dimensões do produto - cm (AxLxP)	15,5x7,5x0,7cm
+                    SAC	4004-0000 (Capitais e grandes centros) ou 0800 124-421 (Demais cidades e regiões)
+                    Processador	Octa-Core
+                    Câmera Traseira	13 + 5MP (Dual Traseira)`,
         votes: 64,
         category: 'celular'
     },
     {
         name: `Tablet Samsung Galaxy Tab A 10.5 T595 - Preto`,
-        price: "1.499,00",
+        price: "1.424,05",
         image: `https://images-submarino.b2w.io/produtos/01/00/item/133822/0/133822041_1GG.jpg`,
         site: `https://www.submarino.com.br/produto/133822041?WT.srch=1&acc=d47a04c6f99456bc289220d5d0ff208d&epar=bp_pl_00_go_g35174&gclid=CjwKCAjw8e7mBRBsEiwAPVxxiLSkR7deySFroGz7AmdwKX37olRtfCcyb4r0cKr4bm2G1K_2t4gcaxoCvvwQAvD_BwE&i=561e53416ed24cafb5322074&o=5bae44a2ebb19ac62cba431e&opn=XMLGOOGLE&sellerId=00776574000660`,
         description: `O Samsung Expert X30 é o notebook com processador Intel Core i5, memória RAM de 8GB, 1TB de HD, tela LED HD de 15,6" e sistema operacional Windows 10 Home. Voltado para pessoas dinâmicas que buscam um produto que ofereça alto desempenho aliado a um design moderno e elegante, e que conta com avançadas características de segurança.`,
@@ -72,6 +96,72 @@ const posts = [
         description: `O Samsung Expert X30 é o notebook com processador Intel Core i5, memória RAM de 8GB, 1TB de HD, tela LED HD de 15,6" e sistema operacional Windows 10 Home. Voltado para pessoas dinâmicas que buscam um produto que ofereça alto desempenho aliado a um design moderno e elegante, e que conta com avançadas características de segurança.`,
         votes: 15,
         category: 'tablet'
+    },
+    {
+        name: `Moto G7 Play Dourado Motorola com Tela de 5,7", 4G, 32 GB e Câmera de 13 MP`,
+        price: "849,06",
+        image: `https://io.fastshop.com.br/wcsstore/FastShopCAS/imagens/_CL_Celular/MRXT19522DRD/MRXT19522DRD_PRD_447_1.jpg`,
+        site: `https://www.fastshop.com.br/web/p/d/MRXT19522DRD_PRD/moto-g7-play-dourado-motorola-com-tela-de-57-4g-32-gb-e-camera-de-13-mp-xt1952-2`,
+        description: `Sistema Operacional
+                    Android Pie - 9.0
+
+                    Tela
+                    Tamanho: 5,7"
+                    Material: IPS
+
+                    Conectividade
+                    4G 
+                    Wi-Fi 802.11 a/b/g/n
+                    EDGE 
+                    GPRS 
+                    Bluetooth 4.2
+
+                    Capacidade
+                    32GB * 
+                    Extensão para Cartões de Memória: até 256GB
+                    * Parte da memória interna já é utilizada pelo sistema operacional e aplicativos pré-instalados
+
+                    Processador
+                    Qualcomm Snapdragon 632 (SDM632)
+
+                    Memória RAM
+                    2GB
+
+                    Câmera Traseira
+                    13MP
+                    Flash
+                    Lente: 78º
+                    Abertura: f/2.0
+
+                    Câmera Frontal
+                    8MP
+                    Lente: 81º
+                    Abertura: f/2.2
+
+                    Filmadora 
+                    HD+ - 720 x 1440 (720 x 1512 incluindo o notch)
+                    `,
+        votes: 28,
+        category: 'celular'
+    },
+    {
+        name: `Notebook Gamer Acer Intel Core i5-7300HQ 8GB 1TB Placa GTX1050 4GB Tela 15,6" Windows 10 Aspire Nitro 5 50U2`,
+        price: "3.799,05",
+        image: `https://static.carrefour.com.br/medias/sys_master/images/images/h53/hd3/h00/h00/11766346678302.jpg`,
+        site: `https://www.carrefour.com.br/Notebook-Gamer-Acer-Intel-Core-i5-7300HQ-8GB-1TB-Placa-GTX1050-4GB-Tela-15-6-Windows-10-Aspire-Nitro-5-50U2/p/5464862?gclid=Cj0KCQjwuLPnBRDjARIsACDzGL1sgJeub79JdVUp1GxLEShGwOYj7Z1znfPly3IC4nZ-NkP6WBnZip8aArBeEALw_wcB&utm_source=google_pla_1p&utm_medium=sem&s_kwcid=AL!705!3!172008722110!!!g!297683871088!&ef_id=XL5hjQAAAEvAHDCs:20190528121806:s`,
+        description: `Se você quer uma máquina veloz e poderosa para rodar os seus games, esse notebook Acer Aspire Nitro5 é o que você procura. Além de possuir uma tela com resolução Full HD, ele tem um processador original Intel Core i5 e 8 GB de RAM, para dar toda a velocidade que você precisa, e uma placa de vídeo NVIDIA GeForce 1050, com 4 GB de memória dedicada. Assim, você terá todo o poder necessário para deixar os seus games incríveis.`,
+        votes: 33,
+        category: 'notebook'
+    },
+    {
+        name: `Notebook Positivo Motion Q232AP Intel Atom 2GB 32GB SSD Tela LCD 14” Windows 10 - Cinza`,
+        price: "944,99",
+        image: `https://images-americanas.b2w.io/produtos/01/00/image/134296/7/134296741_1GG.jpg`,
+        site: `https://www.americanas.com.br/produto/134296732?epar=buscape&hl=lower&opn=YYNKZB&s_term=YYNKZB&voltagem=BIVOLT`,
+        description: `O Notebook Motion Q232AP da Positivo oferece todos os recursos para executar as suas tarefas. Compacto, com design moderno e mais fino, bordas arredondadas e leve atenderá todas as expectativas. 
+            Projetado com processador dual core Cherry Trail Z8350, processamento de vídeo integrado Intel® HD Graphics, placa de som integrada e sistema operacional Windows 10, tenha em suas mãos um computador veloz com alto desempenho para desenvolver os seus trabalhos sem desacelerar. `,
+        votes: 40,
+        category: 'notebook'
     }
 ];
 
