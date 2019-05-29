@@ -33,9 +33,7 @@ const posts = [
         price: "809,10",
         image: `https://images-americanas.b2w.io/produtos/01/00/oferta/134253/7/134253775_1GG.jpg`,
         site: "https://www.americanas.com.br/produto/134253767?opn=YSMESP&loja=02&epar=bp_pl_00_go_pla_tel_smartphone_todas_geral_apostas&WT.srch=1&acc=e789ea56094489dffd798f86ff51c7a9&i=5612cbe46ed24cafb5cae011&o=5cd33d3d6c28a3cb50bdf36a&gclid=Cj0KCQjwuLPnBRDjARIsACDzGL2Xd1ovi23nIMjEYp087UuLfv6yOKNTaIbJFKQE_FhDljnSRnFiVGEaAh7FEALw_wcB",
-        description: `Código	134253767
-                    Código de barras	7892509108355, 7892509108256
-                    NFC	Não
+        description: `
                     Conexões	Wi-Fi,3G,4G
                     Peso liq. aproximado do produto (Kg)	163g
                     Banda	B1(2100), B2(1900), B4(AWS), B5(850), B8(900)
@@ -70,10 +68,130 @@ const posts = [
         votes: 85,
         category: 'tablet'
     },
+    {   
+        name: `Celular Xiaomi Redmi 6A Dual Chip 16GB Preto`,
+        price: "467,00",
+        image: `https://jarvis.bubbstore.com/assets/stores/xiaomi/uploads/images/celular-xiaomi-redmi-6a-dual-chip-16gb-preto-5c78100c284c5-medium.jpg`,
+        site: `https://www.xiaomibrz.com.br/celular-xiaomi-redmi-6a-dual-chip-16gb-preto/p?utm_source=google_shopping&gclid=Cj0KCQjwuLPnBRDjARIsACDzGL0yMad_MSGPW9KFMrkxU5WHcPXFh7yrJksOnnyu5uqPYlxgSQqLzcYaAr1wEALw_wcB`,
+        description: `Trabalhe e jogue com facilidade!
+                    Produzido com a nova tecnologia de 12nm
+                    Processador de alto desempenho até 2.0GHz
+                    5,45 polegadas, tela cheia para um maior aproveitamento
+                    Câmera de 13MP, capture fotos em movimento com detalhes
+                    Dual SIM e com expansão de armazenamento`,
+        votes: 61,
+        category: 'celular'
+    },
     {
-        name: `Notebook Samsung Expert X30 Intel Core i5 - 8GB 1TB LED 15,6” Windows 10`,
-        price: "2.491,47",
+        name: `Tablet M10A Lite 3G Android 7.0 Dual Câmera 10 Polegadas Quad Core Multilaser - NB267`,
+        price: "588,54",
+        image: `https://a-static.mlcdn.com.br/618x463/tablet-m10a-lite-3g-android-7-0-dual-camera-10-polegadas-quad-core-multilaser-nb267/lojamultilaser/3501/53fd18ffbf1df278e6c6ab0631fde6c8.jpg`,
+        site: `https://www.magazineluiza.com.br/tablet-m10a-lite-3g-android-7-0-dual-camera-10-polegadas-quad-core-multilaser-nb267-/p/4315975/tb/mult/?&utm_source=google&utm_medium=pla&utm_campaign=coop_multilaser&partner_id=26908&seller_id=multilaser`,
+        description: `Tablet M10A Lite 3G Android 7.0 Dual Câmera 10 Polegadas Quad Core Multilaser - NB267
+                    Supere as suas expectativas e conte com um design sofisticado
+                    perfeito para você!
+                    REALIZE E ATENDA CHAMADAS DE VOZ
+                    Acabe com as distâncias e esteja sempre mais perto de quem
+                    você mais ama com a função chamada de voz do seu M10 A lite!
+                    TELA NO TAMANHO CERTO PARA VOCÊ
+                    Com uma tela de 10 polegadas, é possível assistir vídeos,
+                    acessar seus aplicativos e sites preferidos com qualidade visual e clareza nas imagens.
+                    `,
+        votes: 29,
+        category: 'tablet'
+    },
+    {
+        name: `Tablet M10A Preto Quad Core Android 7.0 Dual Câmera 3G E Bluetooth Tela 10 Pol. Polegadas Multilaser - NB253`,
+        price: "736,44",
+        image: `https://a-static.mlcdn.com.br/618x463/tablet-m10a-preto-quad-core-android-7-0-dual-camera-3g-e-bluetooth-tela-10-pol-polegadas-multilaser-nb253/lojamultilaser/3181/9ad08594b5af5d15c286a21d1619b1cd.jpg`,
+        site: `https://www.magazineluiza.com.br/tablet-m10a-preto-quad-core-android-7-0-dual-camera-3g-e-bluetooth-tela-10-pol-polegadas-multilaser-nb253-/p/8477371/tb/mult/`,
+        description: `Tablet M10A Preto Quad Core Android 7.0 Dual Câmera 3G E Bluetooth Tela 10 Pol. Polegadas Multilaser - NB253
+                    Tablet M10A preto quad core android 7.0 dual câmera 3G e bluetooth tela 10"" polegadas Multilaser,
+                    realiza e atende chamadas de voz, possui memória de 16 GB interna e 2GB de RAM e bateria de longa duração.`,
+        votes: 17,
+        category: 'tablet'
+    },
+    {
+        name: `Notebook Positivo Motion C4500AI, Intel Celeron Dual Core, 4GB RAM, 500GB, tela 14" LCD, Linux`,
+        price: "1.229,97",
+        image: `https://images-na.ssl-images-amazon.com/images/I/61HgmsgKqhL._SL1000_.jpg`,
+        site: `https://www.amazon.com.br/Notebook-Positivo-Motion-C4500AI-Celeron/dp/B07L8VQ9C7/ref=sr_1_38?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=notebook&qid=1559095222&s=gateway&sr=8-38`,
+        description: `Nome da marca: Positivo
+                    Cor	Prata
+                    Altura do produto	18 milímetros
+                    Largura do produto	33.6 centímetros
+                    Tamanho da tela	14 polegadas
+                    Resolução máxima da tela	1366 x 768
+                    Marca do processador	Intel
+                    Tipo de processador	Intel Celeron
+                    Velocidade do processador	2.6
+                    Número de processadores	4
+                    Tamanho da memória	4 GB
+                    Tecnologia da memória	SATA
+                    Máximo de memória compatível	4 GB
+                    Tamanho do HD	500 GB
+                    Tecnologia do HD	SATA
+                    Número de portas USB 2.0	1
+                    Número de portas USB 3.0	1
+                    Dispositivo de armazenamento óptico	Não Se Aplica
+                    Sistema operacional	Linux`,
+        votes: 37,
+        category: 'notebook'
+    },
+    {
+        name: `Tablet M8W Plus Hibrido Windows 10 8.9 Pol. Ram 2Gb 32Gb Dual Câmera Preto Multilaser - NB242`,
+        price: "669,90",
+        image: `https://http2.mlstatic.com/tablet-pc-actel-101-D_NQ_NP_969823-MLB30183992015_042019-F.webp`,
+        site: `https://produto.mercadolivre.com.br/MLB-1221333198-tablet-pc-actel-101-_JM?matt_tool=41510113&matt_word&gclid=Cj0KCQjwuLPnBRDjARIsACDzGL3CTfK3tyVpsoZHzypCU1bIN2BctSgoRabHSswp5WKlTsn-ye1g3r8aAnaOEALw_wcB&quantity=1`,
+        description: `Sistema de operação
+                    Android 7.0
+                    Tela
+                    10.1 polegada 5 Pontos Tela de Toque Capacitivo, 2.5D Vidro Temperado
+                    Resolução
+                    1280*800 Pixel
+                    CPU
+                    MT8752
+                    RAM
+                    4 GB
+                    Nand Flash
+                    64 GB
+                    Webcam
+                    Frente 2.0MP Volta 5.0MP Câmeras
+                    Sem fio
+                    Wi-fi 802.11 b/g
+                    2G
+                    GSM 850/900/1800/1900 MHz
+                    3G/4G (Opcional)
+                    WCDMA 2100 MHz/FDD LTE
+                    GPS
+                    Sim, A-GPS
+                    Bluetooth
+                    Sim
+                    G-sensor
+                    Apoio
+                    Poder
+                    Bateria
+                    Vídeo mais do que 4 Horas, o tempo de Espera mais 72 horas
+                    `,
+        votes: 13,
+        category: 'tablet'
+    },
+    {
+        name: `Notebook Legacy Intel Quad Core Tela HD 14 Pol. Windows 10 RAM 2GB Multilaser Preto - PC101`,
+        price: "1.039,38",
         image: `https://a-static.mlcdn.com.br/618x463/notebook-samsung-expert-x30-intel-core-i5-8gb-1tb-led-156-windows-10/magazineluiza/221031900/74a0733b0b83a5abeea7a92136908b76.jpg`,
+        site: `https://www.magazineluiza.com.br/notebook-legacy-intel-quad-core-tela-hd-14-pol-windows-10-ram-2gb-multilaser-preto-pc101-/p/7727026/in/note/?&utm_source=google&utm_medium=pla&utm_campaign=coop_multilaser&partner_id=26908&seller_id=multilaser`,
+        description: `Notebook Legacy Intel Quad Core Tela HD 14 Pol. Windows 10 RAM 2GB Multilaser Preto - PC101
+                    Pensando sempre em um novo jeito de te surpreender, a Multilaser apresenta o novo Notebook Legacy Cloud. 
+                    Com tela grande HD de 14 polegadas, viva a experiência com cores mais vivas, nítidas e brilhantes.
+                    Assista filmes, séries, desenhos com alta performance e sem interrupções. Só com um processador Intel® Quad Core você tem a velocidade e rapidez que precisa, para todas as atividades. São 32GB de memória interna e 2GB de memória RAM para garantir ainda mais velocidade no seu desempenho.`,
+        votes: 33,
+        category: 'notebook'
+    }, 
+    {
+        name: `Tablet Pc Actel 10.1`,
+        price: "2.491,47",
+        image: `https://a-static.mlcdn.com.br/618x463/notebook-legacy-intel-quad-core-tela-hd-14-pol-windows-10-ram-2gb-multilaser-preto-pc101/lojamultilaser/3413/c6756e8dd04eaa16932d3e694fc8abcd.jpg`,
         site: `https://www.magazineluiza.com.br/notebook-samsung-expert-x30-intel-core-i5-8gb-1tb-led-156-windows-10/p/221031900/in/ssex/?&utm_source=google&utm_medium=pla&utm_campaign=&partner_id=4651&seller_id=magazineluiza&product_group_id=515549405253&ad_group_id=66665424636&aw_viq=pla&gclid=CjwKCAjw8e7mBRBsEiwAPVxxiAsAc_JgvoPCdKMI2XbXD2Pptmfdi7dWZ_B9uZpyjU4ThXsZ2T0RMxoCTyIQAvD_BwE`,
         description: `O Samsung Expert X30 é o notebook com processador Intel Core i5, memória RAM de 8GB, 1TB de HD, tela LED HD de 15,6" e sistema operacional Windows 10 Home. Voltado para pessoas dinâmicas que buscam um produto que ofereça alto desempenho aliado a um design moderno e elegante, e que conta com avançadas características de segurança.`,
         votes: 23,
