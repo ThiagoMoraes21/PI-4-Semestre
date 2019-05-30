@@ -97,7 +97,7 @@ window.onload = function() {
     window.onresize = function(){
         // let navbarLinks = document.querySelectorAll('.nav-link');
         let pageUrl = window.location.pathname;
-        if (document.documentElement.clientWidth < 992 || isIndexPage == undefined) {
+        if (document.documentElement.clientWidth < 992 || isIndexPage == undefined || document.documentElement.scrollTop >= 150) {
             navbar.classList.add('bgColor');
             if (pageUrl == '/'){
                 navbarDataToggle();
