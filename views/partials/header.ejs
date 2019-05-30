@@ -22,20 +22,6 @@
 
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav mr-auto">
-          <% if(currentPage == '/') { %>
-            <li class="nav-item active">
-              <a class="nav-link" href="/#topOfertas" data-target="#navbarContent" data-toggle="collapse"  data-mixitup-control data-filter="all">Ofertas <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#topOfertas" data-target="#navbarContent" data-toggle="collapse"  data-mixitup-control data-filter=".celular">Celulares</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#topOfertas" data-target="#navbarContent" data-toggle="collapse"  data-mixitup-control data-filter=".notebook">Notebooks</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#topOfertas" data-target="#navbarContent" data-toggle="collapse"  data-mixitup-control data-filter=".tablet">Tablets</a>
-            </li>
-          <% } else { %>
             <li class="nav-item active">
               <a class="nav-link" href="/#topOfertas"  data-mixitup-control data-filter="all">Ofertas <span class="sr-only">(current)</span></a>
             </li>
@@ -48,7 +34,6 @@
             <li class="nav-item">
               <a class="nav-link" href="/#topOfertas" data-mixitup-control data-filter=".tablet">Tablets</a>
             </li>
-          <% } %>
 
           <!--------- Check if the user is logged ----------->
            <% if(!currentUser) {%>

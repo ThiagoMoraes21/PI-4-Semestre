@@ -90,12 +90,47 @@ window.onload = function() {
         navbar.classList.add('bgColor');
     }
 
+    console.log('CURRENT PAGE: ');
+    console.log(window.location.pathname);
+    navbarDataToggle();
+
     // toggle navbar color on window resize
     window.onresize = function(){
+        // let navbarLinks = document.querySelectorAll('.nav-link');
+        let pageUrl = window.location.pathname;
         if (document.documentElement.clientWidth < 992) {
             navbar.classList.add('bgColor');
+            if (pageUrl == '/'){
+                navbarDataToggle();
+            }
         } else {
             navbar.classList.remove('bgColor');
+            navbarDataToggle();
+        }
+    }
+
+    function navbarDataToggle() {
+        let navbarLinks = document.querySelectorAll('.nav-link');
+        let currentPage = window.location.pathname;
+        if (currentPage == '/' && document.documentElement.clientWidth < 992) {
+            navbarLinks.forEach(function (e) {
+                var link = e.getAttribute('href');
+                if (link != '/login' && link != '/logout' && link != '/new') {
+                    e.setAttribute('data-toggle', 'collapse');
+                    e.setAttribute('data-target', '#navbarContent');
+                }
+            });
+        } else {
+            navbarLinks.forEach(function (e) {
+                e.setAttribute('data-toggle', '');
+                e.setAttribute('data-target', '');
+            });
+        }
+
+        // toggle menu color if the window size is smaller than 992px
+        if (document.documentElement.clientWidth < 992) {
+            console.log('window is smaller than 992px');
+            navbar.classList.add('bgColor');
         }
     }
 
