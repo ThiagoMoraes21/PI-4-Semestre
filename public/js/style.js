@@ -8,7 +8,13 @@ window.onload = function() {
         // if not, adds the class bgColor to the navbar
         navbar.classList.add('bgColor');
     } else {
-        var mixer = mixitup('.container');
+        // var mixer = mixitup('.container');
+        var mixer = mixitup('.container', {
+            selectors: {
+                control: '[data-mixitup-control]'
+            }
+        });
+
         // short cards by their points 
         mixer.sort('order:desc')
             .then(function (state) {
