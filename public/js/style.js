@@ -90,15 +90,14 @@ window.onload = function() {
         navbar.classList.add('bgColor');
     }
 
-    console.log('CURRENT PAGE: ');
-    console.log(window.location.pathname);
+    // calling the function that make the navbar data toggle
     navbarDataToggle();
 
     // toggle navbar color on window resize
     window.onresize = function(){
         // let navbarLinks = document.querySelectorAll('.nav-link');
         let pageUrl = window.location.pathname;
-        if (document.documentElement.clientWidth < 992) {
+        if (document.documentElement.clientWidth < 992 || isIndexPage == undefined) {
             navbar.classList.add('bgColor');
             if (pageUrl == '/'){
                 navbarDataToggle();
@@ -125,12 +124,6 @@ window.onload = function() {
                 e.setAttribute('data-toggle', '');
                 e.setAttribute('data-target', '');
             });
-        }
-
-        // toggle menu color if the window size is smaller than 992px
-        if (document.documentElement.clientWidth < 992) {
-            console.log('window is smaller than 992px');
-            navbar.classList.add('bgColor');
         }
     }
 
