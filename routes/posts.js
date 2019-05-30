@@ -90,7 +90,7 @@ router.get('/logout', (req, res) => {
 /*****************/
 // new - show form to create a new post
 router.get('/new', isLoggedIn, (req, res) => {
-  res.render('promo/new', { currentUser: req.user});
+  res.render('promo/new', { currentUser: req.user, currentPage: req.url});
 });
 
 // post - handle the post request on the client-side and create a new post 
@@ -110,7 +110,7 @@ router.post('/', (req, res) => {
     if(err) {
       console.log('Error trying to create the post');
       console.log(err);
-      res.render('/promo/new', { currentUser: req.user });
+      res.render('/promo/new', { currentUser: req.user, currentPage: req.url });
     } else {
       // redirect to the new product page
       res.redirect(`/${createdPost._id}`);
@@ -134,7 +134,7 @@ router.get('/:id', (req, res) => {
       res.render('notFound', { currentUser: req.user, currentPage: req.url });
     } else {
       // render show template 
-      res.render('promo/show', { post: postFound, currentUser: req.user });
+      res.render('promo/show', { post: postFound, currentUser: req.user, currentPage: req.url });
     }
   });
 });
