@@ -73,7 +73,10 @@ window.onload = function() {
                         }
                     }
                 }
+                addPoints(cardId, cardPoints, vote);
+            }
 
+            function addPoints(cardId, cardPoints, vote) {
                 for (let i = 0; i < cardPoints.length; i++) {
                     if (cardId == cardPoints[i].getAttribute('value')) {
                         cardPoints[i].textContent = (parseInt(cardPoints[i].textContent) + vote);
