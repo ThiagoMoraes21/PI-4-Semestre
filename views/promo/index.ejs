@@ -16,66 +16,66 @@
   </header>
 
   <body>
-    <div class="container">
       <div class="row">
           <div class="col-12">
             <hr class="col-3">
             <h2 class="text-center" id="topOfertas">Top Ofertas</h2>
             <hr class="col-3">
           </div>
-
-          <!------------------------- LIST OF CARDS ---------------------->
-          <% posts.forEach((post, index) => { %>
-            <% if(post.category == 'celular') { %>
-                <div class="mix celular col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
-            <% } else if(post.category == 'notebook') { %>
-                <div class="mix notebook col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
-           <% } else if(post.category == 'tablet') { %>
-                <div class="mix tablet col-sm-6 col-md-6 col-lg-4 col-xl-3" data-order="<%= post.votes %>">
-           <% } %>
-            <div class="">
-                  <div class="card">
-                    <a href="/promocao/<%= post._id %>" class="custom-card">
-                      <div>
-                        <p class="price">R$<%= post.price%></p>
-                        <img src="<%= post.image %>" class="card-img-top" alt="...">
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title"><%= post.name %></h5>
-                    </a>
-                        
-                        <!---------------- Card buttons -------------->
-                        <div class="card-buttons" value="<%= post._id %>">
-                          <!----- Like button ----->
-                          <form action="/<%= post._id %>" method="post" class="vote" style="display: inline-block;">
-                            <input type="hidden" name="cardId" value="<%= post._id %>">
-                            <input type="hidden" name="votes" value="<%= post.votes %>">
-                            <input type="hidden" name="like" value="liked">
-                            <button type="submit" class="btn btn-success">
-                              <i class="far fa-thumbs-up"></i>
-                            </button>
-                          </form>
-                          
-                          <!----- Dislike button ------->
-                          <form action="/<%= post._id %>" method="post" class="vote" style="display: inline-block;">
-                            <input type="hidden" name="cardId" value="<%= post._id %>">
-                            <input type="hidden" name="votes" value="<%= post.votes %>">
-                            <input type="hidden" name="dislike" value="disliked">
-                            <button type="submit" class="btn btn-danger">
-                              <i class="far fa-thumbs-down"></i>
-                            </button>
-                          </form>
-
-                          <!--- Store button ----->
-                          <a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
-                        </div>
-                        <p class="votes points" value="<%= post._id %>"><%= post.votes == undefined ? 0 : post.votes %></p>
-                      </div>
-                  </div>
-            </div>
-            </div>
-          <% }); %>
       </div>
-    </div>
+
+		  <!------------------------- LIST OF CARDS ---------------------->
+		<div id="cards-container">
+          	<% posts.forEach((post, index) => { %>
+				<% if(post.category == 'celular') { %>
+					<div class="mix celular" data-order="<%= post.votes %>">
+				<% } 
+					else if(post.category == 'notebook') { %>
+					<div class="mix notebook" data-order="<%= post.votes %>">
+				<% } 
+					else if(post.category == 'tablet') { %>
+					<div class="mix tablet" data-order="<%= post.votes %>">
+				<% } %>
+                    <div class="card">
+                      <a href="/promocao/<%= post._id %>" class="custom-card">
+                        <div>
+                          <p class="price">R$<%= post.price%></p>
+                          <img src="<%= post.image %>" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+						  <h5 class="card-title"><%= post.name %></h5>
+						</div>
+                      </a>
+                          
+						<!---------------- Card buttons -------------->
+						<div class="card-buttons" value="<%= post._id %>">
+						<!----- Like button ----->
+						<form action="/<%= post._id %>" method="post" class="vote" style="display: inline-block;">
+							<input type="hidden" name="cardId" value="<%= post._id %>">
+							<input type="hidden" name="votes" value="<%= post.votes %>">
+							<input type="hidden" name="like" value="liked">
+							<button type="submit" class="btn btn-success">
+							<i class="far fa-thumbs-up"></i>
+							</button>
+						</form>
+						
+						<!----- Dislike button ------->
+						<form action="/<%= post._id %>" method="post" class="vote" style="display: inline-block;">
+							<input type="hidden" name="cardId" value="<%= post._id %>">
+							<input type="hidden" name="votes" value="<%= post.votes %>">
+							<input type="hidden" name="dislike" value="disliked">
+							<button type="submit" class="btn btn-danger">
+							<i class="far fa-thumbs-down"></i>
+							</button>
+						</form>
+
+						<!--- Store button ----->
+						<a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
+						</div>
+						<p class="votes points" value="<%= post._id %>"><%= post.votes == undefined ? 0 : post.votes %></p>
+					</div>
+				</div>
+          	<% }); %>
+		</div>
   </body>
 <% include ../partials/footer %>
