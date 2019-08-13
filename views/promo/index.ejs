@@ -25,7 +25,7 @@
       </div>
 
 		  <!------------------------- LIST OF CARDS ---------------------->
-		<div id="cards-container">
+		<div class="cards-container">
           	<% posts.forEach((post, index) => { %>
 				<% if(post.category == 'celular') { %>
 					<div class="mix celular" data-order="<%= post.votes %>">
@@ -41,6 +41,7 @@
                         <div>
                           <p class="price">R$<%= post.price%></p>
                           <img src="<%= post.image %>" class="card-img-top" alt="...">
+						  <p class="votes points" value="<%= post._id %>"><%= post.votes == undefined ? 0 : post.votes %></p>
                         </div>
                         <div class="card-body">
 						  <h5 class="card-title"><%= post.name %></h5>
@@ -72,7 +73,6 @@
 						<!--- Store button ----->
 						<a href="<%= post.site %>" class="btn btn-primary btn-loja ml-3">Ir à Loja</a>
 						</div>
-						<p class="votes points" value="<%= post._id %>"><%= post.votes == undefined ? 0 : post.votes %></p>
 					</div>
 				</div>
           	<% }); %>

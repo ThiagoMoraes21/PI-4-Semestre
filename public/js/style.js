@@ -49,7 +49,7 @@ window.onload = function() {
                 toggleBtnClass(0);
 
             } 
-
+            
             // toggle voted classes on click
             function toggleBtnClass(el) {
                 for (let k = 0; k < cardButtons.length; k++) {
