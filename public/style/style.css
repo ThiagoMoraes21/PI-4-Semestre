@@ -615,7 +615,7 @@ footer .footerLogo {
 } */
 
 /* header */
-/* @media only screen and (min-width: 680px) {
+@media only screen and (min-width: 680px) {
   .card {
     width: 19rem;
   }
@@ -659,7 +659,7 @@ footer .footerLogo {
   .presentation-header {
     font-size: 3rem!important;
   }
-}  */
+} 
 
 /* containers */
 /* @media (min-width: 992px) {
